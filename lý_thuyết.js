@@ -740,8 +740,52 @@ var myArray = [
  * VD:
  * User.prototype.getClassName = function() {
  *      return this.className
- * }
- * */ 
+ * } */
+
+/** Đối tượng Date
+ * var date = new Date()
+ * 
+ * console.log(date)
+ * Kết quả trả về là một chuỗi gồm thứ, ngày, tháng, giờ hiện tại
+ * Search: Date JavaScript Mozilla để tìm hiểu thêm về phương thức Date */ 
+
+/** Math Object
+ *  - Math.PI:              lấy số PI
+ *  - Math.round():         làm tròn số
+ *  - Math.abs():           lấy giá trị tuyệt đối
+ *  - Math.ceil():          làm tròn số lên
+ *  - Math.floor():         làm tròn số xuống
+ *  - Math.random():        tạo số ngẫu nhiên
+ *  - Math.min():           tìm số bé nhất trong dãy số   
+ *  - Math.max():           tìm số lớn nhất trong dãy số   
+ * 
+ * VD cho Math.random():
+ * 
+ * var random = Math.floor(Math.random() * 5 )
+ * //Biến random này gồm 1 hàm tạo random từ 1-5, rồi làm tròn số xuống bằng hàm floor
+ * 
+ * var bonus = [
+ *      '10 coin',
+ *      '20 coin',
+ *      '30 coin',
+ *      '40 coin',
+ *      '50 coin',
+ * ];
+ * 
+ * console.log(bonus[random]) 
+ * 
+ * Bài tập cho Math Object:
+ * 
+ * Hãy tạo hàm getRandomItem, hàm này nhận 1 tham số là mảng và sẽ trả về ngẫu nhiên 1 phần tử của mảng.
+ * 
+ * Giải:
+ *  function getRandomItem (array) {
+        var randomIndex = Math.floor(Math.random() * array.length)
+        return array[randomIndex]
+    }
+
+    var array = [1, 4, 9]
+    console.log(getRandomItem[array]) */ 
 
 function showMessage (fullName) {
     ketqua = ''
@@ -807,12 +851,34 @@ function Student (firstName, lastName) {
 }
 
 Student.prototype.getFullName = function() {
-    return `${this.firstName} ${this.lastName}`
+    return `${this.firstName} ${''} ${this.lastName}`
 }
 
 var student = new Student('Long', 'Bui');
 
 console.log(student.firstName);  // 'Long'
 console.log(student.lastName);  // 'Bui'
-console.log(student.getFullName());  
-// 'Long Bui'
+console.log(student.getFullName());  // 'Long Bui'
+
+
+// Lý thuyết Math Object
+var random = Math.floor(Math.random() * 5 )
+
+var bonus = [
+      '10 coin',
+      '20 coin',
+      '30 coin',
+      '40 coin',
+      '50 coin',
+];
+ 
+console.log(bonus[random])
+
+// Bài tập cho phần Math object
+function getRandomItem (array) {
+    var randomIndex = Math.floor(Math.random() * array.length)
+    return array[randomIndex]
+}
+
+var array = [1, 4, 9]
+console.log(getRandomItem(array))
