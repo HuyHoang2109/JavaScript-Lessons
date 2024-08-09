@@ -548,6 +548,8 @@ var myArray = [
         }
         console.log(isNumber(999)); */
 
+
+        
 /** Mảng trong JavaScript - Array
  * 
  * 1. Tạo mảng
@@ -568,6 +570,8 @@ var myArray = [
  * 
  * Cách lấy phần tử theo index:
  * console.log('tên mảng cần lấy index'['số thứ tự phần tử cần lấy'] */
+
+
 
 /** Làm việc với Array
  * 
@@ -622,7 +626,122 @@ var myArray = [
  * Cũng có thể truyền vào giá trị âm, như đếm ngược vậy.
  * Lưu ý: số vị trí index != số vị trí phần tử. */ 
 
-/** Object trong JavaScript*/ 
+
+
+/** Object trong JavaScript
+ * Cú pháp:     var 'tên object' = {
+ *                      key: 'value' }
+ * VD:
+ * var myInfo = {
+ *      name: 'Huy Hoang,
+ *      age: 22,
+ *      address: 'TPHCM }
+ * 
+ * Muốn đặt tên key mà bị trùng với những kí tự vi phạm, ta biến key đó thành dạng chuỗi
+ * VD: 'full-name': 'Huy Hoang' //ở đây dấu gạch ngang là vi phạm, nên biến nó thành chuỗi bằng cách thêm cặp nháy đơn
+ * 
+ * Thêm 1 cặp key:value vào object:
+ * Cú pháp:     'tên object'.'tên key' = 'các value'
+ * VD:          myInfo.email = 'huyhoang4675@gmail.com'
+ * 
+ * Thêm 1 cặp key:value, mà tên key lại bị trùng với kí tự vi phạm:
+ * Cú pháp:     'tên object'['tên key'] = 'các value'
+ * VD:          myInfo['my-email'] = 'huyhoang4675@gmail.com'
+ * 
+ * Muốn lấy 1 giá trị ra khỏi object, cần biết key của nó là gì. Ví dụ muốn lấy Huy Hoàng từ myInfo:
+ * Cú pháp:     console.log('tên object'.'tên key')
+ * VD:          console.log(myInfo.name)
+ * 
+ * Cách 2:
+ * Cú pháp:     console.log('tên object'['tên key'])
+ * VD:          console.log(myInfo['my-email'])
+ * 
+ * Bài toán: Cho 2 biến với nội dung sau. Lấy nội dung của key address bằng cách dựa vào 1 biến khác.
+ * var myInfo như ở trên
+ * var myKey = 'address'
+ * 
+ * Giải:        console.log(myInfo[myKey])
+ * Giải thích:
+ * Đống trong [] sẽ thực hiện lấy giá trị từ object myInfo thông qua giá trị được lưu trong biến myKey.
+ * Mà myKey có giá trị là 'address' -> nó sẽ có dạng myInfo['address'] -> kết quả là 'TPHCM'
+ * 
+ * Tạo 1 cặp key:value thông qua 1 biến
+ * Có 1 biến khác, có dạng như sau. Khi thêm vào object, nhập như sau:
+ * var emailKey = 'email'
+ * 
+ * Cú pháp:
+ * var 'tên object' = {
+ *      ['tên biến'] = 'các value'
+ * }
+ * 
+ * VD:
+ * var myInfo = {
+ *      [emailKey] = 'huyhoang4675@gmail.com'
+ * }
+ *  
+ * Xóa 1 cặp key:value trong object
+ * Sử dụng từ khóa 'delete'
+ * Cú pháp:     delete 'tên object'.'tên key'
+ * VD:          delete myInfo.age
+ * 
+ * Có thể tạo 1 function trong object, và nó vẫn gọi được như thường.
+ * VD trong myInfo có 1 hàm getName như sau:
+ * var myInfo = {
+ *      getName: function {
+ *          return this.name
+ *      } //hàm này sẽ lấy giá trị ở key 'name'
+ * }
+ * 
+ * Cú pháp:     console.log('tên object'.'tên hàm'())
+ * VD:          console.log(myInfo.getName())
+ * 
+ * Trong 1 object, nếu có hàm trong đó, thì hàm đó được gọi là phương thước (method).
+ * Những cái khác thì gọi là thuộc tính (property).
+ * 
+ * 
+ * 
+ * Object Constructor
+ * function User(firstName, lastName, avatar) {
+ *      this.firstName = firstName,
+ *      this.lastName = lastName,
+ *      this.avatar = avatar
+ * 
+ *      this.getName = function () {
+ *          return `${this.firstName} ${this.lastName}`
+ *      }
+ * }
+ * User ở đây là một Object Constructor. Quy ước chung khi đặt tên là luôn viết hoa chữ cái đầu.
+ * 
+ * var author = new User('Huy Hoang', 'Nguyen', 'avatar')
+ * var user = new User('Khoa', 'Nguyen', 'avatar')
+ * 
+ * author.title = 'Chia sẻ tạo tại F8'
+ * user.comment = 'Abc'
+ * //Thêm thuộc tính title cho biến author và thêm thuộc tính comment cho biến user
+ * 
+ * console.log(author.getName())
+ * console.log(user.getName())
+ * //2 console.log này sẽ gọi hàm getName trong Object Constructor 'User' cho 2 biến author và user. */ 
+
+
+/** object Prototype - Basic
+ * 1. Prototype là gì?
+ * 2. Sử dụng khi nào? 
+ * 
+ * 1. Prototype giống như nguyên liệu để làm ngôi nhà. Chẳng hạn như khi ta đã khai báo một OC trước,
+ * bây giờ muốn thêm 1 thuộc tính/phương thức vào đó mà không phải chỉnh sửa trong OC, thì ta sử dụng prototype.
+ * Cú pháp:     'tên object'.prototype.'tên thuộc tính muốn tạo' = 'nội dung thuộc tính'
+ * VD:          User.prototype.className = 'F8' 
+ * 
+ * Cú pháp với phương thức:
+ * 'tên object'.prototype.'tên phương thức muốn tạo' = function() {
+ *      'nội dung phương thức'
+ * }
+ * VD:
+ * User.prototype.getClassName = function() {
+ *      return this.className
+ * }
+ * */ 
 
 function showMessage (fullName) {
     ketqua = ''
@@ -667,4 +786,33 @@ function joinWithCharacter(array, charactor) {
     return array.join(charactor)
 }
 
+function User (firstName, lastName, avatar) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.avatar = avatar
+    this.getName = function () {
+        return `${this.firstName} ${this.lastName}`
+    }
+}
 
+var user = new User('Hoang', 'Nguyen', 'avatar')
+
+user.email = 'huyhoang4675@gmail.com'
+
+console.log(user, user.getName())
+
+function Student (firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+}
+
+Student.prototype.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`
+}
+
+var student = new Student('Long', 'Bui');
+
+console.log(student.firstName);  // 'Long'
+console.log(student.lastName);  // 'Bui'
+console.log(student.getFullName());  
+// 'Long Bui'
