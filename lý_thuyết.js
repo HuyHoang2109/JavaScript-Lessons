@@ -145,7 +145,7 @@ var myArray = [
 /** Toán tử so sánh P2
  * ===
  * !==
- * Khác ở chỗ, toán tử so sánh (==, !=) chỉ quan tâm tới value. Còn cái này so sánh cả value & data type
+ * Khác ở chỗ, toán tử so sánh (==, !=) chỉ quan tâm tới value. Còn (===, !==) này so sánh cả value & data type
  * VD:
  * var a = '1';
  * var b = 1;
@@ -787,6 +787,37 @@ var myArray = [
     var array = [1, 4, 9]
     console.log(getRandomItem[array]) */ 
 
+/** Lệnh rẽ nhánh If - else
+ * Cho bài tập: Hãy hoàn thành đoạn code sau, đáp ưng các yêu cầu:
+ * 1. Khi a chia hết cho 3 thì return về 1
+ * 2. Khi a chia hết cho 5 thì return về 2
+ * 3. Khi a chia hết cho 15 thì return về 3
+ * 
+ * Bài giải ở phía dưới */
+
+/** Câu lệnh rẽ nhánh Switch
+ * Khi bài toán cần so sánh toán tử, đúng sai thì dùng if else: < > != == 
+ * Khi bài toán biết trước các điều kiện/kết quả, và có 3 cái trở lên, dùng switch */ 
+
+/** Toán tử 3 ngôi - Ternary Operator 
+ * Cú pháp:     điều kiện ? kết quả nếu điều kiện 1 đúng : kết quả nếu điều kiện 1 sai
+ * VD:          var result = course.coin > 0 ? `${course.coin} Coins` : 'Miễn phí' 
+ * Giải thích:  Nếu course.coin > 0, thì sẽ in ra giá trị với chữ Coins. Những trường hợp < 0 thì in ra Miễn phí */ 
+
+/** Vòng lặp - Loop
+ * 1. for - Lặp với điều kiện đúng
+ * 2. for/in - Lặp qua key của đối tượng
+ * 3. for/of - Lặp qua value của đối tượng
+ * 4. while - Lặp khi điều kiện đúng
+ * 5. do/while - Lặp ít nhất 1 lần, sau đó lặp khi điều kiện đúng 3
+ * 
+ * 1. Vòng lặp For
+ * Cho bài tập sau:
+ * Hãy tạo hàm getRandNumbers có 3 tham số là min, max, length.
+ * Hàm này sẽ trả về một mảng gồm length phần tử, các giá trị trong mảng là số ngẫu nhiên,
+ * giá trị trong khoảng từ min tới max.
+ * Gợi ý: Math.random() * (max - min) + min là cách tạo ra 1 số ngẫu nhiên trong khoảng min - max.
+ * Cách giải ở phía dưới*/ 
 function showMessage (fullName) {
     ketqua = ''
     ketqua += fullName + ' choi game'
@@ -882,3 +913,33 @@ function getRandomItem (array) {
 
 var array = [1, 4, 9]
 console.log(getRandomItem(array))
+
+// Bài tập Lệnh rẽ nhánh If - else
+function run(a) {
+    if (a%3 == 0 && a%5 != 0) {
+        return 1
+    } else if (a%5 == 0 && a%3 != 0 ) {
+        return 2
+    } else if (a%15 == 0) {
+        return 3
+    }
+}
+
+console.log(run(3)) // 1
+console.log(run(5)) // 2
+console.log(run(15)) // 3
+
+for (var i = 1; i <=10; i+1) {
+    console.log(i)
+}
+
+// Bài tập Vòng lặp For
+function getRandNumbers (min, max, length) {
+    var arr = [] //trước tiên phải tạo 1 mảng trống
+    for(var i = 1; i < length; i++) {
+        arr[i] = Math.floor(Math.random() * (max - min) + min)
+    }
+    return arr;
+}
+
+console.log(getRandNumbers(1,197,5))
