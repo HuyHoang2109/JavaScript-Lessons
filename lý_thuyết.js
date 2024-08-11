@@ -106,6 +106,7 @@ x-- giảm giá trị biến xuống 1 và trả về giá trị trước khi gi
     2. || - Or
     3. ! - Not */ 
 
+
 /**Kiểu dữ liệu trong JavaScript
  * 1. Dữ liệu nguyên thủy - Primitive Data
  * - Number
@@ -142,6 +143,7 @@ var myArray = [
     'N Thi Hong Thuy'
 ]*/ 
 
+
 /** Toán tử so sánh P2
  * ===
  * !==
@@ -155,6 +157,7 @@ var myArray = [
  * 
  * console.log (a != b); --> false (vì 2 cái đều đang là 1)
  * console.log (a !== b); --> true (vì 2 cái đều là 1, nhưng khác data type) */ 
+
 
 /**Truthy và Falsy là gì? 
  * Truthy - to bool is true
@@ -235,7 +238,9 @@ var myArray = [
 
     ECMA là đặc tả chi tiết kỹ thuật mà các ngôn ngữ theo đặc tả này phải tuân theo. Javascript là một ngôn ngữ tuân thủ đặc tả kỹ thuật ECMA. */
 
+
 //  Toán tử logical và câu lệnh điều kiện If (xem video để hiểu, bài này hay)
+
 
 /** Hàm (Function)
  * 1. Hàm?
@@ -254,7 +259,7 @@ var myArray = [
  * 
  * 4. Tạo hàm đầu tiên */
 
-/**Tham số trong hàm 
+/** Tham số trong hàm 
  * 1. Tham số?
  *  - Định nghĩa
  *  - Kiểu dữ liệu? - vô hạn kiểu dữ liệu, muốn thêm kiểu dữ liệu nào cũng được
@@ -316,10 +321,12 @@ var myArray = [
  * var tong = sum(5, 10)
  * console.log(tong) */
 
+
 /** Hiểu hơn về hàm 
  * 1. Khi function đặt trùng tên? - function nào gọi sau thì sẽ thực hiện nó (thường không xảy ra trong thực tế)
  * 2. Khai báo biến trong hàm? - được, nhưng biến chỉ gọi được trong hàm đó, vì có tính private
  * 3. Định nghĩa hàm trong hàm? - được, nhưng khai báo hàm ở đâu thì phải gọi luôn ở đó, vì hàm có tính private */
+
 
 /** Các loại function
  * 1. Declaration Function
@@ -346,6 +353,7 @@ var myArray = [
  * 
  * Tên function lúc khai báo kiểu Expression có thể đặt tên hoặc không. Mục đích đặt tên là để dễ hiểu.
  * Khai báo kiểu Declaration thì được gọi hàm trước khi khai báo hàm, còn Expression thì không, do đặc tính hosting mà sau này mới học. */
+
 
 /** Chuỗi trong JavaScript 
  * 1. Tạo chuỗi
@@ -383,6 +391,7 @@ var myArray = [
  * console.log(`Toi la: ${firstName} ${lastName}`)
  * thay vì dùng: console.log('Toi la: ' + firstName + ' ' + lastName)
 */
+
 
 /** Làm việc với chuỗi
  * Lấy ví dụ với chuỗi sau:
@@ -462,6 +471,7 @@ var myArray = [
 
     console.log(strToArray(coursesStr)) */
 
+
 /** Kiểu dữ liệu số (number)
  * Kiểu số - Number
  * Trong JavaScript có 2 loại số:
@@ -524,10 +534,11 @@ var myArray = [
  * (18).toString();     // '18'
  * (17.3).toString();   // '17.3' */
 
-/**Khi chia một số cho một chuỗi, hoặc bất cứ cái gì không hợp lệ, thì kết quả là NaN.
- * Khi typeof kết quả này, vẫn ra number, nhưng số này là số không hợp lệ.
+/** Khi chia một số cho một chuỗi, hoặc bất cứ cái gì không hợp lệ, thì kết quả là NaN.
+ *  Khi typeof kết quả này, vẫn ra number, nhưng số này là số không hợp lệ.
  * 
  * console.log(isNaN('giá trị cần xét')) //hàm kiểm tra số có hợp lệ */
+
 
 /** Bài tập trong chương "Làm việc với số" 
  * Để vượt qua thử thách này, hãy thực hiện theo các yêu cầu sau:
@@ -537,17 +548,7 @@ var myArray = [
     3. Khi value có kiểu số, hàm sẽ trả về true, ngược lại trả về false
     4. Số đó là phải là số hợp lệ (không phải NaN)
     
-    Giải:
-        function isNumber (value) {
-            if(typeof value === 'number' && !isNaN(value)) {
-                return true
-            }
-            else {
-                return false
-            }
-        }
-        console.log(isNumber(999)); */
-
+    Cách giải phía dưới */
 
         
 /** Mảng trong JavaScript - Array
@@ -572,15 +573,13 @@ var myArray = [
  * console.log('tên mảng cần lấy index'['số thứ tự phần tử cần lấy'] */
 
 
-
 /** Làm việc với Array
  * 
  * Cho trước 1 mảng:
  * var languages = [
  *      'JavaScript',
  *      'PHP',
- *      'Ruby'
- * ]
+ *      'Ruby' ]
  * 
  * 1. To string
  * Cú pháp:     console.log(languages.toString())
@@ -625,7 +624,6 @@ var myArray = [
  * Hoặc dùng để copy mảng (trick): console.log(slice(0));
  * Cũng có thể truyền vào giá trị âm, như đếm ngược vậy.
  * Lưu ý: số vị trí index != số vị trí phần tử. */ 
-
 
 
 /** Object trong JavaScript
@@ -696,11 +694,10 @@ var myArray = [
  * VD:          console.log(myInfo.getName())
  * 
  * Trong 1 object, nếu có hàm trong đó, thì hàm đó được gọi là phương thước (method).
- * Những cái khác thì gọi là thuộc tính (property).
- * 
- * 
- * 
- * Object Constructor
+ * Những cái khác thì gọi là thuộc tính (property). */
+
+
+ /** Object Constructor 
  * function User(firstName, lastName, avatar) {
  *      this.firstName = firstName,
  *      this.lastName = lastName,
@@ -730,7 +727,9 @@ var myArray = [
  * 
  * 1. Prototype giống như nguyên liệu để làm ngôi nhà. Chẳng hạn như khi ta đã khai báo một OC trước,
  * bây giờ muốn thêm 1 thuộc tính/phương thức vào đó mà không phải chỉnh sửa trong OC, thì ta sử dụng prototype.
- * Cú pháp:     'tên object'.prototype.'tên thuộc tính muốn tạo' = 'nội dung thuộc tính'
+ * 
+ * Cú pháp với thuộc tính:
+ * 'tên object'.prototype.'tên thuộc tính muốn tạo' = 'nội dung thuộc tính'
  * VD:          User.prototype.className = 'F8' 
  * 
  * Cú pháp với phương thức:
@@ -748,6 +747,7 @@ var myArray = [
  * console.log(date)
  * Kết quả trả về là một chuỗi gồm thứ, ngày, tháng, giờ hiện tại
  * Search: Date JavaScript Mozilla để tìm hiểu thêm về phương thức Date */ 
+
 
 /** Math Object
  *  - Math.PI:              lấy số PI
@@ -787,6 +787,7 @@ var myArray = [
     var array = [1, 4, 9]
     console.log(getRandomItem[array]) */ 
 
+
 /** Lệnh rẽ nhánh If - else
  * Cho bài tập: Hãy hoàn thành đoạn code sau, đáp ưng các yêu cầu:
  * 1. Khi a chia hết cho 3 thì return về 1
@@ -795,14 +796,17 @@ var myArray = [
  * 
  * Bài giải ở phía dưới */
 
+
 /** Câu lệnh rẽ nhánh Switch
  * Khi bài toán cần so sánh toán tử, đúng sai thì dùng if else: < > != == 
  * Khi bài toán biết trước các điều kiện/kết quả, và có 3 cái trở lên, dùng switch */ 
+
 
 /** Toán tử 3 ngôi - Ternary Operator 
  * Cú pháp:     điều kiện ? kết quả nếu điều kiện 1 đúng : kết quả nếu điều kiện 1 sai
  * VD:          var result = course.coin > 0 ? `${course.coin} Coins` : 'Miễn phí' 
  * Giải thích:  Nếu course.coin > 0, thì sẽ in ra giá trị với chữ Coins. Những trường hợp < 0 thì in ra Miễn phí */ 
+
 
 /** Vòng lặp - Loop
  * 1. for - Lặp với điều kiện đúng
@@ -817,7 +821,153 @@ var myArray = [
  * Hàm này sẽ trả về một mảng gồm length phần tử, các giá trị trong mảng là số ngẫu nhiên,
  * giá trị trong khoảng từ min tới max.
  * Gợi ý: Math.random() * (max - min) + min là cách tạo ra 1 số ngẫu nhiên trong khoảng min - max.
- * Cách giải ở phía dưới*/ 
+ * Cách giải phía dưới 
+ * 
+ * Vòng lặp For - phần 2
+ * Cho bài tập sau:
+ * Cho trước một mảng chứa số, hãy viết hàm getTotal trả về tổng giá trị các phần tử của mảng.
+ * Cách giải phía dưới
+ * 
+ * Vòng lặp For - phần 3
+ * Cho bài tập sau:
+ * Cho trước mảng orders là danh sách chứa các khóa học, các mặt hàng này được thể hiện dưới dạng object
+ * và đều có 1 key là price để thể hiện giá trị của mặt hàng đó. Bạn hãy hoàn thành hàm getTotal để tính được tổng giá trị của đơn hàng.
+ * Cách giải phía dưới
+ * 
+ * Giải thích 1 chút về cách làm:
+ * 1. Tạo 1 biến, lưu vào đó chiều dài mảng
+ * 2. Tạo 1 biến lưu tổng tiền
+ * 3. Tạo 1 vòng for bắt đầu từ 0, chạy tới khi kết thúc mảng (là biến vừa tạo ở b1), tăng dần
+ * Lưu ý: học cách gọi lấy biến từ 1 mảng 
+ 
+ * 2. Vòng lặp For/in
+ * 
+ * Cho ví dụ sau:
+ * 
+ * var myInfo = {
+ *      name: 'Huy Hoang',
+ *      age: 18,
+ *      address: 'TPHCM' }
+ * 
+ * for (var key in myInfo) {
+ *      console.log(myInfo[key]) } //Output là từng value trong object trên.
+ * 
+ * hoặc
+ *      console.log(key) } //Output là từng key trong object trên.
+ * 
+ * Lưu ý: key của 1 object là dạng string
+ * 
+ * var languages = [
+ *      'JavaScript',
+ *      'PHP',
+ *      'Ruby']
+ * 
+ * for (var key in languages) {
+ *      console.log(languages[key]) } //Output là từng giá trị trong mảng trên.
+ * //Giải thích: vì key trong vòng for trên lưu vị trí index (0, 1, 2, ...).
+ * 
+ * Lưu ý: key của 1 array là dạng number (key của 1 string cũng là 1 number)
+ * 
+ * var languages = 'JavaScript'
+ * 
+ * for (var key in languages) {
+ *      console.log(languages[key]) } //Output sẽ in ra từng chữ trong chuỗi trên 
+ * 
+ * Cho bài tập sau:
+ * Hãy hoàn thành hàm sao cho kết quả được như kết quả mong đợi.
+ *  // Expected results:     console.log(run({ name: 'Nguyen Van A', age: 16 }));
+    // Output:
+    // [
+    //     "Thuộc tính name có giá trị Nguyen Van A",
+    //     "Thuộc tính age có giá trị 16"
+    // ] 
+    
+ * Phân tích một tí:
+    1. Output là 1 mảng -> cần 1 biến lưu mảng này
+    2. Output gồm các câu hoàn chỉnh -> phải dùng nối chuỗi (template ES6) hoặc dùng cách thường
+    
+ * Bài giải phía dưới.
+    
+ * 3. Vòng lặp For/of 
+ * 
+ * Sử dụng trong trường hợp muốn lấy ra những phần tử của 1 mảng, hoặc những ký tự của 1 chuỗi.
+ * Không áp dụng được với object. Muốn sử dụng phải biến đổi 1 chút.
+ * Cho ví dụ sau
+ * var languages = [
+ *      'JavaSript',
+ *      'PHP',
+ *      'Ruby' ]
+ * 
+ * for(var value of languages) {
+ *      console.log(value) }  //Output sẽ là từng giá trị trong mảng trên.
+ * 
+ * var languages = 'JavaScript'
+ * for(var value of languages) {
+ *      console.log(value) }  //Output sẽ là từng ký tự trong chuỗi đó (giống kết quả với For/in bên trên)
+ * 
+ * Trong trường hợp muốn sử dụng For/of để lấy value từ 1 object, ta có 2 cách:
+ * 
+ * Cách 1: duyệt qua từng key trong object
+ * console.log(Object.keys(myInfo)) //Hàm này để lấy ra keys trong object. Không cần đưa vào code, nó chỉ được đưa ra để dễ hiểu thôi.
+ * 
+ * for(var value of Object.keys(myInfo)) {
+ *      console.log(value) } 
+ * 
+ * Cách 2: duyệt thẳng qua từng value trong object
+ * console.log(Object.values(myInfo)) //Hàm này để lấy ra keys trong object. Không cần đưa vào code, nó chỉ được đưa ra để dễ hiểu thôi.
+ * 
+ * for(var value of Object.values(myInfo)) {
+ *      console.log(value) } 
+ * 
+ * Vòng lặp while
+ * 
+ * Bài toán: In số tăng dần từ 1 tới 100
+ * Cách làm:
+ * var i = 0;
+ * 
+ * while (i < 100) {
+ *      i++;
+ *      console.log(i) } 
+ * 
+ * Vòng lặp do/while
+ * 
+ * Bài tập trong phần lý thuyết để suy nghĩ:
+ * 
+ * var i = 0;
+ * var isSuccess = false;
+ * 
+ * do {
+ *      i++;
+ *      console.log('Nạp thẻ lần ' + i;
+ *      if(true) {
+ *          isSuccess = true; }
+ * } while (!isSuccess && i <=3)
+ * 
+ * Giải thích:
+ * 1. Phương thức if sẽ gán cho mọi boolean bằng true (theo như code) -> phần code bên trong if sẽ được chạy -> isSuccess = true -> Code được chạy 1 lần
+ * 2. So sánh while. Lúc này isSuccess = true -> !isSuccess = !true -> false -> cả vế = false -> sai điều kiện -> dừng code
+ * 3. Nếu đổi thành if(false) thì tự giải thích nhé. 
+ * 
+ * Break và Continue trong vòng lặp
+ * Break và Continue có thể sử dụng trong tất cả các vòng lặp đã học
+ * 
+ * Bài toán 1: In ra chỉ từ số 1 - 5 với vòng for cho trước, sử dụng break hoặc continue.
+ * for(var i = 0; i < 10; i++) {
+ *      console.log(i)
+ *      if(i >= 5) {
+ *          break }
+ * 
+ * Bài toán 2: In ra chỉ các số chẵn/lẻ với vòng for cho trước, sử dụng break hoặc continue.
+ * for(var i = 0; i < 10; i++) {
+ *      if(i%2 !== 0) {
+ *          continue; }
+ *      console.log(i) }
+ * 
+ * Giải thích 1 chút:
+ * 1. Phương thức if so sánh điều kiện, nếu i là số lẻ, sẽ thực thi code phía trong, và ngược lại.
+ * 2. Khi xét tới các trường  hợp số chẵn -> sai điều kiện -> không chạy code phía trong (continue) -> chạy console.log
+ * 3. Khi xét tới các trường hợp số lẻ -> đúng điều kiện -> chạy code phía trong (continue) -> bỏ qua các trường hợp này và không chạy code phía -> console.log không được chạy*/ 
+
 function showMessage (fullName) {
     ketqua = ''
     ketqua += fullName + ' choi game'
@@ -839,10 +989,10 @@ var myString = 'Hoc JS tai F8!'
 console.log(myString.slice(-3, -1))
 console.log(myString.replace('JS', 'JavaScript'))
 
-// var languages = 'JavaScript, Ruby, PHP'
-// console.log(languages.split(', '))
+var languages = 'JavaScript, Ruby, PHP'
+console.log(languages.split(', '))
 
-// console.log(Number.parseFloat('238,21'))
+console.log(Number.parseFloat('238,21'))
 
 var languages = [
     'JavaScript',
@@ -861,6 +1011,18 @@ function joinWithCharacter(array, charactor) {
     return array.join(charactor)
 }
 
+// Bài tập chương Làm việc với số
+function isNumber (value) {
+    if(typeof value === 'number' && !isNaN(value)) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+console.log(isNumber(999));
+
+// Lý thuyết Object Constructor
 function User (firstName, lastName, avatar) {
     this.firstName = firstName
     this.lastName = lastName
@@ -929,17 +1091,68 @@ console.log(run(3)) // 1
 console.log(run(5)) // 2
 console.log(run(15)) // 3
 
-for (var i = 1; i <=10; i+1) {
-    console.log(i)
-}
-
 // Bài tập Vòng lặp For
 function getRandNumbers (min, max, length) {
-    var arr = [] //trước tiên phải tạo 1 mảng trống
-    for(var i = 1; i < length; i++) {
+    var arr = [] 
+    for(var i = 0; i < length; i++) {
         arr[i] = Math.floor(Math.random() * (max - min) + min)
     }
     return arr;
 }
 
 console.log(getRandNumbers(1,197,5))
+
+// Bài tập vòng lặp For - phần 2
+function getTotal(arr) {
+    var total = 0;
+    for(var i = 0; i < arr.length; i ++) {
+        total += arr[i]
+    }
+    return total
+}
+
+console.log(getTotal([1,2,70]))
+
+// Bài tập vòng lặp For - phần 3
+var orders = [
+    {
+        name: 'Khóa học HTML - CSS Pro',
+        price: 3000000
+    },
+    {
+        name: 'Khóa học Javascript Pro',
+        price: 2500000
+    },
+    {
+        name: 'Khóa học React Pro',
+        price: 3200000
+    }
+]
+
+function getTotal (a) {
+    var aLength = a.length
+    var total = 0 
+    for (var i = 0; i < aLength; i++) {
+        total += a[i].price
+    }
+    return total
+}
+
+getTotal(orders)
+console.log(orders[1])
+
+// Bài tập vòng lặp For/in
+function run(object) {
+    var results = []
+    for(var key in object) {
+        results.push('Thuộc tính ' + key + ' có giá trị ' + object[key])
+    }
+    return results
+}
+
+console.log(run({ name: 'Nguyen Van A', age: 16 }));
+
+for(var i = 0; i < 10; i++) {
+          if(i%2 !== 0) {
+              continue; }
+          console.log(i) }
