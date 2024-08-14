@@ -1100,6 +1100,11 @@ var myArray = [
  *      return courses.name === 'Ruby'
  * })
  * console.log(listCourses)
+ * 
+ * Bài tập Làm việc với Mảng - Phần 2
+ * Để vượt qua thử thách này, hãy tạo hàm getMostFavoriteSport có 1 tham số (F8 sẽ gọi hàm này và luôn truyền đối số là 1 array). Hàm getMostFavoriteSport sẽ trả về các môn thể thao có điểm số yêu thích lớn hơn 5.
+ * 
+ * Bài giải phía dưới
 */ 
 
 function showMessage (fullName) {
@@ -1290,3 +1295,20 @@ for(var i = 0; i < 10; i++) {
           if(i%2 !== 0) {
               continue; }
           console.log(i) }
+
+// Bài tập Làm việc với Mảng - Phần 2
+const sports = [ 
+  { name: 'Bóng rổ', like: 6 },
+  { name: 'Bơi lội', like: 5 },
+  { name: 'Bongs đá', like: 10 }
+]
+
+function getMostSportLike(a) {
+  var result = a.filter(function (b) {
+    return b.like > 5
+  })
+  return result
+  
+}
+
+console.log(getMostSportLike(sports))
