@@ -966,7 +966,73 @@ var myArray = [
  * Giải thích 1 chút:
  * 1. Phương thức if so sánh điều kiện, nếu i là số lẻ, sẽ thực thi code phía trong, và ngược lại.
  * 2. Khi xét tới các trường  hợp số chẵn -> sai điều kiện -> không chạy code phía trong (continue) -> chạy console.log
- * 3. Khi xét tới các trường hợp số lẻ -> đúng điều kiện -> chạy code phía trong (continue) -> bỏ qua các trường hợp này và không chạy code phía -> console.log không được chạy*/ 
+ * 3. Khi xét tới các trường hợp số lẻ -> đúng điều kiện -> chạy code phía trong (continue) -> bỏ qua các trường hợp này và không chạy code phía -> console.log không được chạy */ 
+
+/** Vòng lặp lồng nhau - Nested Loop
+ * 
+ * var array = [
+ *      [1, 2]
+ *      [2, 3]
+ *      [3, 4] ];
+ * 
+ * for (var i = 0; i < array.length; i++) {
+ *      for (var j = 0; j < array[i].length; j++) {
+ *          console.log(array[i][j]) } } */ 
+
+/** Bài toán xóa phần tử trùng lặp (không dùng các hàm có sẵn trong JavaScript) 
+ * Trong JavaScript, có sẵn 1 Constructor Function tên là "Set". Đặc tính của nó là những element của nó là unique, có nghĩa element có lặp lại 
+ * thì vẫn lấy element đó 1 lần thôi.
+ * 
+ * var array = ['a', 'b', 'c', 'a', 'b', 'c',]
+ * console.log(new Set(array))
+ * //Kết quả sẽ trả về 1 object có chứa các phần tử unique. Nhưng bài toán lại muốn trả về 1 mảng, nên ta biến đổi một tí, sử dụng Spread Operator trong ES6.
+ * console.log([...(new Set(array))])
+ * 
+ * Muốn sử dụng đệ quy, ta phải tuân thủ các quy tắc sau:
+ * 1. Xác định điểm dừng
+ * 2. Logic handle => để tạo ra điểm dừng
+ * 
+ * Ví dụ tạo function countdown:
+ * function countDown(num) {
+ *      if(num > 0) {
+ *          console.log(num)
+ *          return countDown(num - 1)
+ *      }
+ *      return num;
+ * }
+ * countDown(10)
+ * 
+ * Ví dụ về đệ quy:
+ * function loop(start, end, cb) { // cb ở đây là callback
+ *      if( start <= end) {
+ *          cb(start)
+ *          return loop(start + 1, end, cb)
+ *      }
+ * }
+ * 
+ * var array = ['JavaScript', 'PHP', 'Ruby']
+ * loop(0, array.length - 1, function(index) {
+ *      console.log('index: ', index) }
+ * 
+ * Ví dụ tính giai thừa:
+ * function giaiThua(number) {
+ *      var output = 1
+ *      for(var i = number; i > 0; i--) {
+ *          output = output * il
+ *      }
+ *      return output;
+ * }
+ * console.log(giaiThua(6))
+ * 
+ * Tính giai thừa theo cách dệ quy:
+ * function giaiThu(number) {
+ *      if (number > 0) {
+ *          return number * giaiThua(number - 1)
+ *      }
+ *      return 1 //return 1 là vì 0! = 1
+ * }
+ * console.log(giaiThua(3))
+*/
 
 function showMessage (fullName) {
     ketqua = ''
