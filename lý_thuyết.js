@@ -1031,8 +1031,51 @@ var myArray = [
  *      }
  *      return 1 //return 1 là vì 0! = 1
  * }
- * console.log(giaiThua(3))
-*/
+ * console.log(giaiThua(3)) */
+
+/** Array methods 
+ *      forEach()
+ *      every()
+ *      some()
+ *      find()
+ *      filter()
+ *      map()
+ *      reduce() 
+ * 
+ * var courses = [
+ *      {
+ *          id: 1,
+ *          name: 'JavaScript' ,
+ *          coin: 250
+ *      },
+ *      {
+ *          id: 2,
+ *          name: 'HTML, CSS' ,
+ *          coin: 0
+ *      },
+ *      {
+ *          id: 3,
+ *          name: 'Ruby' ,
+ *          coin: 0
+ *      },
+ *      {
+ *          id: 4,
+ *          name: 'PHP' ,
+ *          coin: 400
+ *      },
+ *      {
+ *          id: 5,
+ *          name: 'ReactJS' ,
+ *          coin: 500
+ *      }
+ * 
+ * Dùng để duyệt qua từng phần tử của mảng. Bên trong forEach là một function, hay còn gọi là callback.
+ * courses.forEach(function (course, index) {
+ *      console.log(index, course)
+ * })
+ * 
+ * Dùng để kiểm tra các phần tử trong mảng thỏa mãn một điều kiện nào đó. Giá trị trả về của every() là boolean.
+ * */ 
 
 function showMessage (fullName) {
     ketqua = ''
