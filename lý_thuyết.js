@@ -1074,8 +1074,33 @@ var myArray = [
  *      console.log(index, course)
  * })
  * 
- * Dùng để kiểm tra các phần tử trong mảng thỏa mãn một điều kiện nào đó. Giá trị trả về của every() là boolean.
- * */ 
+ * Dùng để kiểm tra tất cả các phần tử trong mảng thỏa mãn một điều kiện nào đó. Giá trị trả về của every() là boolean. Hàm này sẽ xét điều kiện cho từng phần tử, nếu điều kiện sai ngay từ phần tử đầu thì sẽ là false luôn.
+ * var isFree = courses.every(function (course, index) {
+ *      console log(index) //in ra để thấy hàm đang xét tới đâu
+ *      return courses.coin === 0
+ * })
+ * console.log(isFree)
+ * //Hàm này sẽ trả về true nếu tất cả các khoá học đều miễn phí, hoặc false nếu ngược lại.
+ * 
+ * Cũng duyệt từng phần tử như every(), nhưng some() chỉ cần 1 phần tử đúng điều kiện thì sẽ trả về true và dừng vòng lặp.
+ * var isFree = courses.some(function (course, index) {
+ *.     console log(index) //in ra để thấy hàm đang xét tới đâu
+ *      return courses.coin === 0
+ * })
+ * console.log(isFree)
+ * 
+ * Hàm find() sẽ tìm và trả về phần tử đầu thoả mãn điều kiện. Nếu không có phần tử nào thoả mãn, sẽ trả về undefined. 
+ * var course = courses.find(function (course) {
+ *      return courses.name === 'Ruby'
+ * })
+ * console.log(course)
+ * 
+ * Hàm filter() cũng tìm kiếm giống hàm find(), nhưng nó trả về tất cả những phần tử thoả mãn điều kiện.
+ * var listCourses = courses.filter(function (course) {
+ *      return courses.name === 'Ruby'
+ * })
+ * console.log(listCourses)
+*/ 
 
 function showMessage (fullName) {
     ketqua = ''
