@@ -1072,9 +1072,15 @@ var myArray = [
  * Dùng để duyệt qua từng phần tử của mảng. Bên trong forEach là một function, hay còn gọi là callback.
  * courses.forEach(function (course, index) {
  *      console.log(index, course)
- * })
+ * } //course ở đây đại diện cho từng phần tử trong mảng, index là vị trí của phần tử đó (thường không cần, thêm vào để ví dụ thôi)
  * 
  * Dùng để kiểm tra các phần tử trong mảng thỏa mãn một điều kiện nào đó. Giá trị trả về của every() là boolean.
+ * var isFree = courses.every(course) {
+ *      return course.coin === 0 //true nếu tất cả đều miễn phí, false nếu chỉ 1 cái có phí
+ * }
+ * console.log(isFree)
+ * 
+ * Hàm some() thì ngược lại với every()
  * */ 
 
 function showMessage (fullName) {
