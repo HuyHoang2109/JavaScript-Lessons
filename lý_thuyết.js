@@ -1067,45 +1067,123 @@ var myArray = [
  *          id: 5,
  *          name: 'ReactJS' ,
  *          coin: 500
- *      }
+ *      }]
  * 
- * Dùng để duyệt qua từng phần tử của mảng. Bên trong forEach là một function, hay còn gọi là callback.
+ * Phương thức forEach() dùng để duyệt qua từng phần tử của mảng. Bên trong forEach là một function, hay còn gọi là callback.
  * courses.forEach(function (course, index) {
  *      console.log(index, course)
  * } //course ở đây đại diện cho từng phần tử trong mảng, index là vị trí của phần tử đó (thường không cần, thêm vào để ví dụ thôi)
  * 
- * Dùng để kiểm tra tất cả các phần tử trong mảng thỏa mãn một điều kiện nào đó. Giá trị trả về của every() là boolean. Hàm này sẽ xét điều kiện cho từng phần tử, nếu điều kiện sai ngay từ phần tử đầu thì sẽ là false luôn.
+ * Phương thức every() dùng để kiểm tra tất cả các phần tử trong mảng thỏa mãn một điều kiện nào đó. 
+ * Giá trị trả về của every() là boolean. Hàm này sẽ xét điều kiện cho từng phần tử, nếu điều kiện sai ngay từ phần tử đầu thì sẽ là false luôn.
  * var isFree = courses.every(function (course, index) {
  *      console log(index) //in ra để thấy hàm đang xét tới đâu
  *      return courses.coin === 0
  * })
  * console.log(isFree)
- * //Hàm này sẽ trả về true nếu tất cả các khoá học đều miễn phí, hoặc false nếu ngược lại.
+ * //Trả về true nếu tất cả các khoá học đều miễn phí, false nếu ngược lại.
  * 
- * Cũng duyệt từng phần tử như every(), nhưng some() chỉ cần 1 phần tử đúng điều kiện thì sẽ trả về true và dừng vòng lặp.
+ * Phương thức some() cũng duyệt từng phần tử như every(), nhưng some() chỉ cần 1 phần tử đúng điều kiện thì sẽ trả về true và dừng vòng lặp.
  * var isFree = courses.some(function (course, index) {
  *.     console log(index) //in ra để thấy hàm đang xét tới đâu
  *      return courses.coin === 0
  * })
  * console.log(isFree)
  * 
- * Hàm find() sẽ tìm và trả về phần tử đầu thoả mãn điều kiện. Nếu không có phần tử nào thoả mãn, sẽ trả về undefined. 
+ * Phương thức find() sẽ tìm và trả về phần tử đầu thoả mãn điều kiện. Nếu không có phần tử nào thoả mãn, sẽ trả về undefined. 
  * var course = courses.find(function (course) {
  *      return courses.name === 'Ruby'
  * })
  * console.log(course)
  * 
- * Hàm filter() cũng tìm kiếm giống hàm find(), nhưng nó trả về tất cả những phần tử thoả mãn điều kiện.
+ * Phương thức filter() cũng tìm kiếm giống hàm find(), nhưng nó trả về tất cả những phần tử thoả mãn điều kiện.
  * var listCourses = courses.filter(function (course) {
  *      return courses.name === 'Ruby'
  * })
- * console.log(listCourses)
- * 
- * Bài tập Làm việc với Mảng - Phần 2
+ * console.log(listCourses) */
+
+ /** Bài tập Làm việc với Mảng - Phần 2
  * Để vượt qua thử thách này, hãy tạo hàm getMostFavoriteSport có 1 tham số (F8 sẽ gọi hàm này và luôn truyền đối số là 1 array). Hàm getMostFavoriteSport sẽ trả về các môn thể thao có điểm số yêu thích lớn hơn 5.
  * 
- * Bài giải phía dưới
-*/ 
+ * Bài giải phía dưới */
+
+ /** Phương thức map(). 
+ * The map() method in JavaScript is used to create a new array by applying a function to each element of an existing array. 
+ * It’s a very handy tool when you want to transform the elements of an array without changing the original array.
+ * Trong cái function bên trong map(), nó return lại cái gì, thì những vị trí của element đó sẽ nhận được cái đó trong mảng mới.
+ * Phương thức này có 3 tham số: tham số đầu là item của array, tham số thứ 2 là index, tham số thứ 3 là originArray (thường ít khi được dùng, trả về array trước khi sửa đổi)
+ * Thử với cách khai báo thứ 3, return 123, thì tất cả phần tử sẽ là 123.
+ * 
+ * Cú pháp:
+ * C1:
+ * var newCourses = courses.map(function (course) {})
+ * 
+ * C2:
+ * var courseHandler = function() {}
+ * var newCourses = courses.map(courseHandler)
+ * 
+ * C3:
+ * function courseHandler(course) {}
+ * var newCourses = courses.map(courseHandler)
+ * console.log(newCourses)
+ * 
+ * Bài toán đặt ra là, với mảng courses cho trước, thêm chữ khóa học trong name, và thêm coinText bằng với coin.
+ * 
+ * Bài giải phía dưới */
+
+ /** Phương thức reduce() sẽ nhận 2 đối số truyền vào: 1 là function(), 2 là giá trị khởi tạo (GTKT)
+ * GTKT không bắt buộc, nhưng sẽ ảnh hưởng đến cách reduce() chạy. Khi không có initial value thì nó sẽ lấy phần tử đầu tiên
+ * của mảng để làm GTKT. Khi đó, giá trị currentValue lại là giá trị của phần tử thứ 2.
+ * VD: var totalCoin = courses.reduce(coinHandler, 0)
+ * Trong function, return lại cái gì thì biến lưu trữ sẽ lưu cái đó.
+ * 
+ * Cú pháp như map() bên trên.
+ * 
+ * var i = 0;
+ * 
+ * function coinHandler(accumulator, currentValue, currentIndex, originArray) { 
+ * //accumulator ở đây là biến lưu trữ, và giá trị khởi tạo là 0 như bên dưới. Accumulator có thể là bất cứ kiểu giá trị nào.
+ *      i++
+ *      console.table({
+ *          'Lượt chạy: ': i,
+ *          'Biến tích trữ: ': accumulator,
+ *          'Giá khóa học: ': currentValue.coin
+ *      })
+ * }
+ * 
+ * var totalCoin = courses.reduce(coinHandler, 0)
+ * Bài toán đặt ra là, một mảng mới với 1 biến duy nhât là tổng coin của các khóa học. Bài giải phía dưới. */
+
+ /** Thực hàng sử dụng phương pháp reduce() #1
+ * Tại SEA GAMES 31 vừa qua, đoàn thể thao Việt Nam đã đứng đầu bảng tổng sắp huy chương. 
+ * Hãy tạo hàm getTotalGold có 1 tham số là mảng. Tính tổng số huy chương vàng mà đoàn thể thao 
+ * Việt Nam đạt được trong kỳ SEA Game lần này.
+ * Bài giải phía dưới.
+ * 
+ * Sử dụng các Array methods thay cho các vòng For có các lợi ich sau:
+ * 1. Dễ hiểu (thật ra nếu chưa biết tới các methods này thì vòng for dễ hiểu hơn)
+ * 2. Ngắn gọn (các array methods sinh ra để nó làm ngắn gọn đi code)
+ * 3. Hiệu năng (các array methods chỉ nhanh hơn khoảng 1/vài nghìn giây thôi, khi xử lý dữ liệu lớn mới thấy rõ) */ 
+
+/** Ví dụ Array reduce() method #1
+ * Flat - "Làm phẳng" mảng từ Depth Array (Mảng sâu)
+ * var depthArray = [1, 2, [3, 4], 5, 6, [7, 8, 9]]
+ * 
+ * var flatArray = depthArray.reduce(function(flatOutput, depthItem) {
+ *      return flatOutput.concat(depthItem)
+ * })
+ * 
+ * Ví dụ Array reduce() method #2
+ * Lấy ra các khóa học đưa vào 1 mảng mới
+ * Đề và bài giải phía dưới */  
+
+/** Thực hành sử dụng phương thức reduce() #2
+ * Cho trước danh sách một số bộ phim, hãy viết hàm calculateRating để tính điểm trung bình IMDB của những bộ phim mà Christopher Nolan làm đạo diễn.
+
+ * Gợi ý
+ * Dùng phương thức filter để lấy ra những bộ phim do Christopher Nolan làm đạo diễn
+ * Dùng phương thức reduce để tính tổng điểm IMDB
+ * Tính điểm IMDB trung bình*/ 
 
 function showMessage (fullName) {
     ketqua = ''
@@ -1312,3 +1390,266 @@ function getMostSportLike(a) {
 }
 
 console.log(getMostSportLike(sports))
+
+// Lý thuyết Array map() method. Vì biến name giống với mấy bài tập ở trên nên ở đây đổi lại.
+var courses = [
+      {
+          id: 1,
+          ten: 'JavaScript' ,
+          coin: 250
+      },
+      {
+          id: 2,
+          ten: 'HTML, CSS' ,
+          coin: 0
+      },
+      {
+          id: 3,
+          ten: 'Ruby' ,
+          coin: 700
+      },
+      {
+          id: 4,
+          ten: 'PHP' ,
+          coin: 400
+      },
+      {
+          id: 5,
+          ten: 'ReactJS' ,
+          coin: 500
+      }]
+
+function courseHandler(course) {
+    return {
+        id: course.id,
+        ten: `Khoa hoc: ${course.ten}`,
+        coin: course.coin,
+        coinText: `Gia: ${course.coin}` }
+}
+
+var newCourses = courses.map(courseHandler)
+console.log(newCourses)
+
+// Lý thuyết Array reduce() method
+var i = 0;
+
+function coinHandler(accumulator, currentValue, currentIndex, originArray) { 
+//accumulator ở đây là biến lưu trữ, và giá trị khởi tạo là 0 như bên dưới. Accumulator có thể là bất cứ kiểu giá trị nào.
+    i++
+    var total = accumulator + currentValue.coin
+    console.table({
+        'Lượt chạy: ': i,
+        'Biến tích trữ: ': accumulator,
+        'Giá khóa học: ': currentValue.coin,
+        'Tích trữ được: ': total
+    })
+    // return currentValue.coin
+    return total
+     
+}
+
+var totalCoin = courses.reduce(coinHandler, 0)
+console.log(totalCoin) 
+
+    // Ở đây ghi đầy đủ ra cho hiểu cách hoạt động thôi. Còn để giải quyết bài toán thì ngắn gọn như sau:
+    // Để '2' vào mấy tên biến cho không trùng với cái bên trên
+var totalCoin2 = courses.reduce(function(accumulator2, currentValue2){
+    return accumulator2 + currentValue2.coin
+}, 0)
+
+console.log(totalCoin2)
+
+// Thực hành sử dụng phương pháp reduce () #1
+// Sửa cái thành sports2 cho khỏi trùng bên trên
+var sports2 = [
+    {
+        name: 'Bơi lội',
+        gold: 11
+    },
+    {
+        name: 'Boxing',
+        gold: 3
+    },
+    {
+        name: 'Đạp xe',
+        gold: 4
+    },
+    {
+        name: 'Đấu kiếm',
+        gold: 5
+    },
+]
+
+function getTotalGold (a) {
+    var totalGoldMedal = a.reduce(function(b, c){
+        return b + c.gold
+    }, 0)
+    return totalGoldMedal
+}
+
+console.log(getTotalGold(sports2))
+
+// Ví dụ Array reduce() method #1
+var depthArray = [1, 2, [3, 4], 5, 6, [7, 8, 9]]
+
+var flatArray = depthArray.reduce(function(flatOutput, depthItem) {
+    return flatOutput.concat(depthItem)
+}, [])
+
+console.log(flatArray)
+
+// Ví dụ Array reduce() method #2
+// Vì có sự trùng nhau, nên tên các biến sẽ khác với video
+var chuDeHoc = [
+    {
+        chuDe: "Front-end",
+        khoaHoc: [
+            {
+                stt: 1,
+                tenKhoaHoc: "HTML, CSS"
+            },
+            {
+                stt: 2,
+                tenKhoaHoc: "JavaScript"
+            },
+        ]
+    },
+    {
+        chuDe: "Back-end",
+        khoaHoc: [
+            {
+                stt: 1,
+                tenKhoaHoc: "PHP"
+            },
+            {
+                stt: 2,
+                tenKhoaHoc: "NodeJS"
+            },
+        ]
+    }
+ ]  
+
+ var newKhoaHoc = chuDeHoc.reduce(function(bienLuuTru, bienHienTai) {
+    return bienLuuTru.concat(bienHienTai.khoaHoc)
+ }, [])
+
+console.log(newKhoaHoc)
+
+// Thực hành sử dụng phương thức reduce() #2
+var watchList = [
+    {
+      "Title": "Inception",
+      "Year": "2010",
+      "Rated": "PG-13",
+      "Released": "16 Jul 2010",
+      "Runtime": "148 min",
+      "Genre": "Action, Adventure, Crime",
+      "Director": "Christopher Nolan",
+      "Writer": "Christopher Nolan",
+      "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
+      "Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
+      "Language": "English, Japanese, French",
+      "Country": "USA, UK",
+      "imdbRating": "8.8",
+      "imdbVotes": "1,446,708",
+      "imdbID": "tt1375666",
+      "Type": "movie",
+    },
+    {
+      "Title": "Interstellar",
+      "Year": "2014",
+      "Rated": "PG-13",
+      "Released": "07 Nov 2014",
+      "Runtime": "169 min",
+      "Genre": "Adventure, Drama, Sci-Fi",
+      "Director": "Christopher Nolan",
+      "Writer": "Jonathan Nolan, Christopher Nolan",
+      "Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
+      "Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+      "Language": "English",
+      "Country": "USA, UK",
+      "imdbRating": "8.6",
+      "imdbVotes": "910,366",
+      "imdbID": "tt0816692",
+      "Type": "movie",
+    },
+    {
+      "Title": "The Dark Knight",
+      "Year": "2008",
+      "Rated": "PG-13",
+      "Released": "18 Jul 2008",
+      "Runtime": "152 min",
+      "Genre": "Action, Adventure, Crime",
+      "Director": "Christopher Nolan",
+      "Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
+      "Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
+      "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+      "Language": "English, Mandarin",
+      "Country": "USA, UK",
+      "imdbRating": "9.0",
+      "imdbVotes": "1,652,832",
+      "imdbID": "tt0468569",
+      "Type": "movie",
+    },
+    {
+      "Title": "Batman Begins",
+      "Year": "2005",
+      "Rated": "PG-13",
+      "Released": "15 Jun 2005",
+      "Runtime": "140 min",
+      "Genre": "Action, Adventure",
+      "Director": "Christopher Nolan",
+      "Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
+      "Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
+      "Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
+      "Language": "English, Urdu, Mandarin",
+      "Country": "USA, UK",
+      "imdbRating": "8.3",
+      "imdbVotes": "972,584",
+      "imdbID": "tt0372784",
+      "Type": "movie",
+    },
+    {
+      "Title": "Avatar",
+      "Year": "2009",
+      "Rated": "PG-13",
+      "Released": "18 Dec 2009",
+      "Runtime": "162 min",
+      "Genre": "Action, Adventure, Fantasy",
+      "Director": "James Cameron",
+      "Writer": "James Cameron",
+      "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+      "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+      "Language": "English, Spanish",
+      "Country": "USA, UK",
+      "imdbRating": "7.9",
+      "imdbVotes": "876,575",
+      "imdbID": "tt0499549",
+      "Type": "movie",
+    }
+  ];
+  
+  function calculateRating(a) {
+    var phimCuaCN = a.filter(function(b) {
+      return b.Director == "Christopher Nolan" 
+    })
+    console.log(phimCuaCN)
+  
+    var trungBinhIDM = phimCuaCN.reduce(function(c, d) {
+      return c + Number(d.imdbRating)/phimCuaCN.length
+    } , 0)
+
+    return trungBinhIDM
+
+  }
+  
+  console.log(calculateRating(watchList)); // Output: 8.675
+  
+  
+  
+  
+  
+  
+  
+
+
