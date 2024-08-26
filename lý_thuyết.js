@@ -106,6 +106,7 @@ x-- giảm giá trị biến xuống 1 và trả về giá trị trước khi gi
     2. || - Or
     3. ! - Not */ 
 
+// ==============================================================================================================================
 
 /**Kiểu dữ liệu trong JavaScript
  * 1. Dữ liệu nguyên thủy - Primitive Data
@@ -143,6 +144,7 @@ var myArray = [
     'N Thi Hong Thuy'
 ]*/ 
 
+// ==============================================================================================================================
 
 /** Toán tử so sánh P2
  * ===
@@ -223,11 +225,8 @@ var myArray = [
     Ngoại lệ? - document.all
 
     Trong Javascript (phía trình duyệt) sẽ có sẵn một đối tượng document, và khi bạn thử !!document.all sẽ trả về false. Chẳng lẽ document.all cũng là falsy hay sao?
-
     Bản thân mình cũng thắc mắc điều này nên mình đã search Google "Why document.all is falsy?" và mình đã tìm được câu trả lời tại đây (https://stackoverflow.com/questions/10350142/why-is-document-all-falsy)
-
     Tóm tắt câu trả lời:
-
     document.all là một ngoại lệ chính thức duy nhất theo đặc tả ECMA (phiên bản 5). Đặc tả này mô tả toàn bộ các object khi chuyển sang boolean sẽ là true. Tuy nhiên, document.all là một ngoại lệ.
 
     Cụ thể như sau:
@@ -238,9 +237,11 @@ var myArray = [
 
     ECMA là đặc tả chi tiết kỹ thuật mà các ngôn ngữ theo đặc tả này phải tuân theo. Javascript là một ngôn ngữ tuân thủ đặc tả kỹ thuật ECMA. */
 
+// ==============================================================================================================================
 
 //  Toán tử logical và câu lệnh điều kiện If (xem video để hiểu, bài này hay)
 
+// ==============================================================================================================================
 
 /** Hàm (Function)
  * 1. Hàm?
@@ -300,7 +301,7 @@ var myArray = [
  * var isConfirm = confirm('Message')
  * console.log(isConfirm)
  * 
- * dòng code đầu để mở hộp thoại confirm và ghi lại lựa chọn của người dùng. dòng 2 để xuất ra log. */
+ * Dòng code đầu để mở hộp thoại confirm và ghi lại lựa chọn của người dùng, dòng 2 để xuất ra log. */
 
 /** Hàm sum cơ bản
  * 
@@ -321,6 +322,7 @@ var myArray = [
  * var tong = sum(5, 10)
  * console.log(tong) */
 
+// ==============================================================================================================================
 
 /** Hiểu hơn về hàm 
  * 1. Khi function đặt trùng tên? - function nào gọi sau thì sẽ thực hiện nó (thường không xảy ra trong thực tế)
@@ -354,6 +356,7 @@ var myArray = [
  * Tên function lúc khai báo kiểu Expression có thể đặt tên hoặc không. Mục đích đặt tên là để dễ hiểu.
  * Khai báo kiểu Declaration thì được gọi hàm trước khi khai báo hàm, còn Expression thì không, do đặc tính hosting mà sau này mới học. */
 
+// ==============================================================================================================================
 
 /** Chuỗi trong JavaScript 
  * 1. Tạo chuỗi
@@ -392,6 +395,7 @@ var myArray = [
  * thay vì dùng: console.log('Toi la: ' + firstName + ' ' + lastName)
 */
 
+// ==============================================================================================================================
 
 /** Làm việc với chuỗi
  * Lấy ví dụ với chuỗi sau:
@@ -452,7 +456,7 @@ var myArray = [
  * console.log(languages.split(''))
  * 
  * 9. Get a character by index
- * Cú pháp:     console.log(myString2.charAt('vị trí trong chuỗi'))
+ * Cú pháp:     console.log(myString2.charAt(vị trí trong chuỗi))
  * Cách khác:   console.log(myString2[10])
  * 
  * const myString2 = 'Huy Hoang'
@@ -471,6 +475,7 @@ var myArray = [
 
     console.log(strToArray(coursesStr)) */
 
+// ==============================================================================================================================
 
 /** Kiểu dữ liệu số (number)
  * Kiểu số - Number
@@ -539,6 +544,7 @@ var myArray = [
  * 
  * console.log(isNaN('giá trị cần xét')) //hàm kiểm tra số có hợp lệ */
 
+// ==============================================================================================================================
 
 /** Bài tập trong chương "Làm việc với số" 
  * Để vượt qua thử thách này, hãy thực hiện theo các yêu cầu sau:
@@ -550,6 +556,7 @@ var myArray = [
     
     Cách giải phía dưới */
 
+// ==============================================================================================================================
         
 /** Mảng trong JavaScript - Array
  * 
@@ -567,11 +574,12 @@ var myArray = [
  * C2: var languages = new Array()
  * 
  * Cách kiểm tra có phải mảng không:
- * console.log(Array.isArray('tên mảng cần kiểm tra') 
+ * console.log(Array.isArray(tên mảng cần kiểm tra) 
  * 
  * Cách lấy phần tử theo index:
- * console.log('tên mảng cần lấy index'['số thứ tự phần tử cần lấy'] */
+ * console.log(tên-mảng-cần-lấy-index[số thứ tự phần tử cần lấy] */
 
+// ==============================================================================================================================
 
 /** Làm việc với Array
  * 
@@ -608,23 +616,24 @@ var myArray = [
  * Thêm phần tử vào đầu mảng. Không giới hạn số lượng thêm.
  * 
  * 7. Splicing
- * Cú pháp:     languages.splice('số vị trí index', 'số phần tử muốn xóa tính từ số vị trí index', 'phần tử muốn thêm sau số vị trí index')
+ * Cú pháp:     languages.splice(số-vị-trí-index, số-phần-tử-muốn-xóa-tính-từ-số-vị-trí-index, 'phần tử muốn thêm sau số vị trí index')
  * Hàm này có thể dùng để xóa và thêm phần tử trong array. Trường hợp thêm thì không giới hạn số phần tử có thể thêm.
  * Ví dụ muốn xóa ở vị trí số 0 (JavaScript) và thêm vào đó là (Java) thì nhập:
  * languages.splice(0, 1, 'Java')
  * 
  * 8. Concat
- * Cú pháp:     console.log('tên array 1'.concat('tên array 2'))
+ * Cú pháp:     console.log(tên-array-1.concat(tên-array-2))
  * Dùng để nối 2 mảng với nhau.
  * 
  * 9. Slicing
- * Cú pháp:     console.log(languages.slice('số vị trí index bắt đầu', 'số vị trí index kết thúc'))
+ * Cú pháp:     console.log(languages.slice(số-vị-trí-index-bắt-đầu, số-vị-trí-index-kết-thúc))
  * Hàm này sẽ cắt ra các phần tử tính từ vị trí bắt đầu đến vị trí kết thúc.
  * Khác với các hàm cắt khác, là kết quả sẽ là các phần tử được cắt, chứ không phải cắt là xóa đi.
  * Hoặc dùng để copy mảng (trick): console.log(slice(0));
  * Cũng có thể truyền vào giá trị âm, như đếm ngược vậy.
  * Lưu ý: số vị trí index != số vị trí phần tử. */ 
 
+// ==============================================================================================================================
 
 /** Object trong JavaScript
  * Cú pháp:     var 'tên object' = {
@@ -639,19 +648,19 @@ var myArray = [
  * VD: 'full-name': 'Huy Hoang' //ở đây dấu gạch ngang là vi phạm, nên biến nó thành chuỗi bằng cách thêm cặp nháy đơn
  * 
  * Thêm 1 cặp key:value vào object:
- * Cú pháp:     'tên object'.'tên key' = 'các value'
+ * Cú pháp:     tên-object.tên-key = 'các value'
  * VD:          myInfo.email = 'huyhoang4675@gmail.com'
  * 
  * Thêm 1 cặp key:value, mà tên key lại bị trùng với kí tự vi phạm:
- * Cú pháp:     'tên object'['tên key'] = 'các value'
+ * Cú pháp:     tên-object[tên-key] = 'các value'
  * VD:          myInfo['my-email'] = 'huyhoang4675@gmail.com'
  * 
  * Muốn lấy 1 giá trị ra khỏi object, cần biết key của nó là gì. Ví dụ muốn lấy Huy Hoàng từ myInfo:
- * Cú pháp:     console.log('tên object'.'tên key')
+ * Cú pháp:     console.log(tên-object.tên-key)
  * VD:          console.log(myInfo.name)
  * 
  * Cách 2:
- * Cú pháp:     console.log('tên object'['tên key'])
+ * Cú pháp:     console.log(tên-object['tên-key'])
  * VD:          console.log(myInfo['my-email'])
  * 
  * Bài toán: Cho 2 biến với nội dung sau. Lấy nội dung của key address bằng cách dựa vào 1 biến khác.
@@ -668,8 +677,8 @@ var myArray = [
  * var emailKey = 'email'
  * 
  * Cú pháp:
- * var 'tên object' = {
- *      ['tên biến'] = 'các value'
+ * var tên-object = {
+ *      [tên-biến] = 'các value'
  * }
  * 
  * VD:
@@ -679,7 +688,7 @@ var myArray = [
  *  
  * Xóa 1 cặp key:value trong object
  * Sử dụng từ khóa 'delete'
- * Cú pháp:     delete 'tên object'.'tên key'
+ * Cú pháp:     delete tên-object.tên-key
  * VD:          delete myInfo.age
  * 
  * Có thể tạo 1 function trong object, và nó vẫn gọi được như thường.
@@ -690,12 +699,13 @@ var myArray = [
  *      } //hàm này sẽ lấy giá trị ở key 'name'
  * }
  * 
- * Cú pháp:     console.log('tên object'.'tên hàm'())
+ * Cú pháp:     console.log(tên-object.tên-hàm())
  * VD:          console.log(myInfo.getName())
  * 
  * Trong 1 object, nếu có hàm trong đó, thì hàm đó được gọi là phương thước (method).
  * Những cái khác thì gọi là thuộc tính (property). */
 
+// ==============================================================================================================================
 
  /** Object Constructor 
  * function User(firstName, lastName, avatar) {
@@ -720,6 +730,7 @@ var myArray = [
  * console.log(user.getName())
  * //2 console.log này sẽ gọi hàm getName trong Object Constructor 'User' cho 2 biến author và user. */ 
 
+// ==============================================================================================================================
 
 /** object Prototype - Basic
  * 1. Prototype là gì?
@@ -729,11 +740,11 @@ var myArray = [
  * bây giờ muốn thêm 1 thuộc tính/phương thức vào đó mà không phải chỉnh sửa trong OC, thì ta sử dụng prototype.
  * 
  * Cú pháp với thuộc tính:
- * 'tên object'.prototype.'tên thuộc tính muốn tạo' = 'nội dung thuộc tính'
+ * tên-object.prototype.tên-thuộc-tính-muốn-tạo = 'nội dung thuộc tính'
  * VD:          User.prototype.className = 'F8' 
  * 
  * Cú pháp với phương thức:
- * 'tên object'.prototype.'tên phương thức muốn tạo' = function() {
+ * tên-object.prototype.tên-phương-thức-muốn-tạo = function() {
  *      'nội dung phương thức'
  * }
  * VD:
@@ -748,6 +759,7 @@ var myArray = [
  * Kết quả trả về là một chuỗi gồm thứ, ngày, tháng, giờ hiện tại
  * Search: Date JavaScript Mozilla để tìm hiểu thêm về phương thức Date */ 
 
+// ==============================================================================================================================
 
 /** Math Object
  *  - Math.PI:              lấy số PI
@@ -787,6 +799,7 @@ var myArray = [
     var array = [1, 4, 9]
     console.log(getRandomItem[array]) */ 
 
+// ==============================================================================================================================
 
 /** Lệnh rẽ nhánh If - else
  * Cho bài tập: Hãy hoàn thành đoạn code sau, đáp ưng các yêu cầu:
@@ -796,17 +809,20 @@ var myArray = [
  * 
  * Bài giải ở phía dưới */
 
+// ==============================================================================================================================
 
 /** Câu lệnh rẽ nhánh Switch
  * Khi bài toán cần so sánh toán tử, đúng sai thì dùng if else: < > != == 
  * Khi bài toán biết trước các điều kiện/kết quả, và có 3 cái trở lên, dùng switch */ 
 
+// ==============================================================================================================================
 
 /** Toán tử 3 ngôi - Ternary Operator 
- * Cú pháp:     điều kiện ? kết quả nếu điều kiện 1 đúng : kết quả nếu điều kiện 1 sai
+ * Cú pháp:     điều-kiện ? kết-quả-nếu-điều-kiện-1-đúng : kết-quả-nếu-điều-kiện-1-sai
  * VD:          var result = course.coin > 0 ? `${course.coin} Coins` : 'Miễn phí' 
  * Giải thích:  Nếu course.coin > 0, thì sẽ in ra giá trị với chữ Coins. Những trường hợp < 0 thì in ra Miễn phí */ 
 
+// ==============================================================================================================================
 
 /** Vòng lặp - Loop
  * 1. for - Lặp với điều kiện đúng
@@ -826,7 +842,7 @@ var myArray = [
  * Vòng lặp For - phần 2
  * Cho bài tập sau:
  * Cho trước một mảng chứa số, hãy viết hàm getTotal trả về tổng giá trị các phần tử của mảng.
- * Cách giải phía dưới
+ * Cách giải phía dưới.
  * 
  * Vòng lặp For - phần 3
  * Cho bài tập sau:
@@ -968,6 +984,8 @@ var myArray = [
  * 2. Khi xét tới các trường  hợp số chẵn -> sai điều kiện -> không chạy code phía trong (continue) -> chạy console.log
  * 3. Khi xét tới các trường hợp số lẻ -> đúng điều kiện -> chạy code phía trong (continue) -> bỏ qua các trường hợp này và không chạy code phía -> console.log không được chạy */ 
 
+// ==============================================================================================================================
+
 /** Vòng lặp lồng nhau - Nested Loop
  * 
  * var array = [
@@ -978,6 +996,8 @@ var myArray = [
  * for (var i = 0; i < array.length; i++) {
  *      for (var j = 0; j < array[i].length; j++) {
  *          console.log(array[i][j]) } } */ 
+
+// ==============================================================================================================================
 
 /** Bài toán xóa phần tử trùng lặp (không dùng các hàm có sẵn trong JavaScript) 
  * Trong JavaScript, có sẵn 1 Constructor Function tên là "Set". Đặc tính của nó là những element của nó là unique, có nghĩa element có lặp lại 
@@ -1032,6 +1052,8 @@ var myArray = [
  *      return 1 //return 1 là vì 0! = 1
  * }
  * console.log(giaiThua(3)) */
+
+// ==============================================================================================================================
 
 /** Array methods 
  *      forEach()
@@ -1102,10 +1124,14 @@ var myArray = [
  * })
  * console.log(listCourses) */
 
+// ==============================================================================================================================
+
  /** Bài tập Làm việc với Mảng - Phần 2
  * Để vượt qua thử thách này, hãy tạo hàm getMostFavoriteSport có 1 tham số (F8 sẽ gọi hàm này và luôn truyền đối số là 1 array). Hàm getMostFavoriteSport sẽ trả về các môn thể thao có điểm số yêu thích lớn hơn 5.
  * 
  * Bài giải phía dưới */
+
+// ==============================================================================================================================
 
  /** Phương thức map(). 
  * The map() method in JavaScript is used to create a new array by applying a function to each element of an existing array. 
@@ -1131,6 +1157,8 @@ var myArray = [
  * 
  * Bài giải phía dưới */
 
+// ==============================================================================================================================
+
  /** Phương thức reduce() sẽ nhận 2 đối số truyền vào: 1 là function(), 2 là giá trị khởi tạo (GTKT)
  * GTKT không bắt buộc, nhưng sẽ ảnh hưởng đến cách reduce() chạy. Khi không có initial value thì nó sẽ lấy phần tử đầu tiên
  * của mảng để làm GTKT. Khi đó, giá trị currentValue lại là giá trị của phần tử thứ 2.
@@ -1154,6 +1182,8 @@ var myArray = [
  * var totalCoin = courses.reduce(coinHandler, 0)
  * Bài toán đặt ra là, một mảng mới với 1 biến duy nhât là tổng coin của các khóa học. Bài giải phía dưới. */
 
+// ==============================================================================================================================
+
  /** Thực hàng sử dụng phương pháp reduce() #1
  * Tại SEA GAMES 31 vừa qua, đoàn thể thao Việt Nam đã đứng đầu bảng tổng sắp huy chương. 
  * Hãy tạo hàm getTotalGold có 1 tham số là mảng. Tính tổng số huy chương vàng mà đoàn thể thao 
@@ -1164,6 +1194,8 @@ var myArray = [
  * 1. Dễ hiểu (thật ra nếu chưa biết tới các methods này thì vòng for dễ hiểu hơn)
  * 2. Ngắn gọn (các array methods sinh ra để nó làm ngắn gọn đi code)
  * 3. Hiệu năng (các array methods chỉ nhanh hơn khoảng 1/vài nghìn giây thôi, khi xử lý dữ liệu lớn mới thấy rõ) */ 
+
+// ==============================================================================================================================
 
 /** Ví dụ Array reduce() method #1
  * Flat - "Làm phẳng" mảng từ Depth Array (Mảng sâu)
@@ -1177,13 +1209,64 @@ var myArray = [
  * Lấy ra các khóa học đưa vào 1 mảng mới
  * Đề và bài giải phía dưới */  
 
+// ==============================================================================================================================
+
 /** Thực hành sử dụng phương thức reduce() #2
  * Cho trước danh sách một số bộ phim, hãy viết hàm calculateRating để tính điểm trung bình IMDB của những bộ phim mà Christopher Nolan làm đạo diễn.
 
  * Gợi ý
  * Dùng phương thức filter để lấy ra những bộ phim do Christopher Nolan làm đạo diễn
  * Dùng phương thức reduce để tính tổng điểm IMDB
- * Tính điểm IMDB trung bình*/ 
+ * Tính điểm IMDB trung bình */ 
+
+// ==============================================================================================================================
+
+/** Phương thức reduce() có logic như thế nào? 
+ * Bài này khá khó hiểu, chắc phải xem lại cả video thì mới hiểu được.
+ * Bài toán đặt ra là tự viết 1 phương thức mới, sao cho hoạt động như phương thức reduce().
+ * Bài giải phía dưới. */
+
+// ==============================================================================================================================
+
+/** String/Array includes() method.
+ * Phương thức này dùng để tìm kiếm những ký tự có trong chuỗi/mảng đó không.
+ * Cú pháp:
+ * console.log(tên-mảng-chuỗi.includes('chuỗi ký tự cần tìm', vị-trí-bắt-đầu-tìm-kiếm))
+ * Vị trí bắt đầu tìm kiếm có thể là số dương hoặc số âm. Với số âm, nó sẽ lấy độ dài mảng + số đó = vị trí bắt đầu tìm kiếm.
+ * 
+ * VD với chuỗi:
+ * var title = 'Responsive web design'
+ * 
+ * console.log(title.includes('web')) //Output: true
+ * 
+ * Tương tự với mảng. */
+
+// ==============================================================================================================================
+
+/** Callback?
+ * Là hàm (function) được truyền qua đối số khi gọi hàm khác 
+ * 1. Là hàm
+ * 2. Được truyền qua đối số 
+ * 
+ * VD:
+ * function myFunction(param) {
+ *  if (typeof param === 'function') {
+ *      param('Học lập trình') } }
+ * 
+ * function myCallback(value) {
+ *  console.log('Value: ',value)}
+ * 
+ * myFunction(myCallback) //Output: Value: Học lập trình
+ * 
+ * Giải thích:
+ * 
+ * myFunction được gọi, myCallback được truyền vào như một đối số, có nghĩa là param trong myFunction là myCallback.
+ * -> param('Học lập trình') -> myCallback('Học lập trình')
+ * Từ đây, myCallback nhận 'Học lập trình' là value -> KQ: Value: Học lập trình
+ * Chỗ if là để kiểm tra myCallback có phải là 1 function không, vì nếu không phải sẽ lỗi.
+ * */ 
+
+
 
 function showMessage (fullName) {
     ketqua = ''
@@ -1535,6 +1618,7 @@ var chuDeHoc = [
 
 console.log(newKhoaHoc)
 
+
 // Thực hành sử dụng phương thức reduce() #2
 var watchList = [
     {
@@ -1627,24 +1711,72 @@ var watchList = [
       "imdbID": "tt0499549",
       "Type": "movie",
     }
-  ];
+];
   
-  function calculateRating(a) {
-    var phimCuaCN = a.filter(function(b) {
-      return b.Director == "Christopher Nolan" 
+    function calculateRating(data) {
+        var phimCuaCN = data.filter(function(daoDien) {
+            return daoDien.Director == "Christopher Nolan" 
     })
     console.log(phimCuaCN)
   
-    var trungBinhIDM = phimCuaCN.reduce(function(c, d) {
-      return c + Number(d.imdbRating)/phimCuaCN.length
+    var trungBinhIDM = phimCuaCN.reduce(function(c, d) { //c là biến lưu trữ, d là biến hiện tại (currentValue)
+        return c + Number(d.imdbRating)/phimCuaCN.length
     } , 0)
-
     return trungBinhIDM
-
   }
   
   console.log(calculateRating(watchList)); // Output: 8.675
+
+
+//  Phương thức reduce() có logic như thế nào?
+    Array.prototype.reduce2 = function(callback, result) { 
+        let i = 0
+        if (arguments.length < 2){
+            i = 1
+            result = this[0]
+        }
+
+        for (; i < this.length; i++) {
+            result = callback(callback, this[i], i, this)
+        }
+        return result
+    }
+    //1655: Đối số 1 là callback, có thể hiểu là hàm gọi lại. Đối số 2 là GTKT, nhưng đặt là result luôn,
+    //vì khi return ra ngoài nó vẫn sẽ trở thành kết quả cuối cùng. VD trong 1 mảng, GTKT là 10, thì sau khi
+    //callback, biến GTKT này sẽ lưu kết quả của những lần lặp (10 + x + y +...) -> chính nó là biến kết quả.
+    //1657 -> 1662: Đây là trường hợp khi KHÔNG truyền GTKT
+    //1657: Dòng này kiểm tra xem người dùng có nhập đối số thứ 2 không
+    //1659: Lúc này sẽ gán cho GTKT là giá trị đầu tiên trong mảng, và currentValue sẽ là giá trị thứ 2.
+    //1662 -> 1664: Đây là trường hợp khi CÓ truyền GTKT
+    //1663: 1 vòng lặp, gọi lại hàm callback. Callback nhận 4 tham số, trong đó biến tích trữ (chính là result luôn).
+
+// Đây là bài tập cho phần trên luôn
+    const daySo = [1, 2, 3, 4, 5]
+
+    var ketQua = daySo.reduce2((tong, soHienTai) => {
+        return tong + soHienTai
+    })
+    //Video này ông Sơn dùng ES6, nên chịu khó một chút.
   
+    
+// Thực hành sử dụng phương thức reduce() #3
+    var arr = [
+        ['name', 'Sơn Đặng'],
+        ['age', 18],
+    ];
+    
+    var arrToObj = function(array) {
+    return array.reduce(function(acc, cur) {
+        acc[cur[0]] = cur[1];
+        return acc;
+    }, {});
+    };
+    // acc is an object, acc['key'] = value; assigns value to the property key in the object acc.
+    // The key is 'name'. The value associated with this key is 'Sơn Đặng'.
+    // So, the object acc now looks like this: { name: 'Sơn Đặng' }
+
+    console.log(arrToObj(arr)); 
+    // Expected results: { name: 'Sơn Đặng', age: 18 }
   
   
   
