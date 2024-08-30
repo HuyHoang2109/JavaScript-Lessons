@@ -801,3 +801,55 @@ var watchList = [
 
     // Giải thích:
     // Thêm một hàm điều kiện: chỉ cần một trong các phần tử trả về false, lập tức trả về false.
+
+// ==============================================================================================================================
+
+// Get element methods
+
+var headingNode = document.getElementById('heading')
+
+var headingNodes = document.getElementsByClassName('heading')
+
+var headingNodesTag = document.getElementsByTagName('h1')
+
+var headingNodeSelector = document.querySelector('.heading')
+
+var headingNodeSelectorAll = document.querySelectorAll('.heading')
+
+
+console.log(headingNode)
+console.log(headingNodes)
+console.log(headingNodesTag)
+console.log(headingNodeSelector)
+console.log(headingNodeSelectorAll)
+console.log(headingNodeSelectorAll[2])
+console.log(document.forms)
+console.log(document.forms[1])
+console.log(document.forms['form-2'])
+console.log(document.forms.testForm)
+console.log(document.anchors)
+
+// Thực hành get Element
+
+    /** Cho trước file HTML, các bạn hãy sử dụng các phương thức truy vấn đến các element trong DOM được học ở bài trước để lấy ra các element sau:
+
+    1. productsListElement: thẻ div có class là products-list.
+    2. firstProductElement: thẻ div đầu tiên có class là product.
+    3. buttonElements: tất cả các thẻ button. */
+
+    var productsListElement = document.querySelector("div.products-list")
+    var firstProductElement = document.querySelector("div.product:first-child")
+    var buttonElements = document.querySelectorAll("button")
+
+// ==============================================================================================================================
+
+// Get element methods -2
+
+    let listItemNodes = document.querySelectorAll('.box-1 li')
+    console.log(listItemNodes)
+    //Cái này là xong bài toán 1
+
+    let boxNode = document.querySelector('.box-1')
+    console.log(boxNode.querySelectorAll('li'))
+    //2 dòng này có nghĩa là, lấy boxNode gọi querySelectorAll, là lấy các thẻ <li> là con của .box-1
+    //Hoặc có thể dùng: console.log(boxNode.getElementsByTagName('li')), KQ trả về là như nhau.

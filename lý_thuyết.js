@@ -1343,12 +1343,70 @@ var myArray = [
 
 // ==============================================================================================================================
 
+/** Get element method 
+ * 1. Có thể get element bằng cách gọi:
+ * ID, class, tag, CSS selector, HTML collection
+ * 
+ * 2. Cú pháp get bằng ID:
+ * document.getElementById('id của đối tượng muốn lấy') 
+ * 
+ * 3. Cú pháp get bằng className:
+ * document.getElementsByClassName('className của đối tượng muốn lấy')
+ * 
+ * Kết quả trả về là 1 HTML Collection gồm các phần tử chứa className cần lấy
+ * 
+ * 4. Cú pháp get bằng tagName:
+ * document.getElementsByTagName('tagName của đối tượng muốn lấy') 
+ * 
+ * Kết quả trả về là 1 HTML Collection gồm các phần tử chứa tagName cần lấy
+ * 
+ * 5. Cú pháp get bằng CSS selector:
+ * a. Chỉ chọn ra phần tử đầu
+ * document.querySelector('selector muốn lấy')
+ * VD: document.querySelector('.heading')
+ * 
+ * VD: document.querySelector('html .box .heading')
+ * VD: document.querySelector('html .box .heading:first-child')
+ * VD: document.querySelector('html .box .heading:nth-child(2)')
+ * 
+ * Kết quả trả về là phần tử đầu tiên nó gặp thõa mãn điều kiện
+ * 
+ * b. Chọn tất cả phần tử
+ * document.querySelectorAll('selector muốn lấy')
+ * VD: document.querySelectorAll('.heading')
+ * 
+ * Kết quả trả về là 1 NodeList, bao gồm các phần chứa selector muốn lấy.
+ * 
+ * Bonus cách lấy phần tử từ NodeList:
+ * console.log(tên-biến-lưu-trữ[vị-trí-phần-tử-muốn-lấy])
+ * 
+ * 6. Cú pháp get bằng HTML Collection:
+ * Thằng này có một số cái gọi trực tiếp được luôn, không cần get bằng ID hay className.
+ * VD: console.log(document.forms)
+ * 
+ * Đặc biệt cái form, ngoài lưu bằng index (0, 1, 2,...) ra thì nó còn lưu theo key (nó tự tạo), với tên key
+ * trùng với tên id/tên class.
+ * a. Tên id/tên class phải để trong dấu nháy (vì vi phạm quy tắc đặt tên nếu không để dấu '-')
+ * VD: console.log(document.forms['tên id/tên class muốn lấy'])
+ * 
+ * b. Tên id/tên class đặt đúng theo quy tắc (VD: testForm)
+ * VD: console.log(document.forms.tên-id-hoặc-tên-class-muốn-lấy)
+ * 
+ * 7. Cú pháp get bằng tag:
+ * document.tên-tag
+ * VD: document.anchors, document.images
+ * Với VD trên, KQ trả về là tất cả thẻ <a> có thuộc tính name. Còn nếu không có thì sẽ là một mảng HTML Collection trống.
+ * 
+ * Bài thực hành giải phía dưới. */ 
+
+// ==============================================================================================================================
+
+/** Get element methods 2
+ * Bài toán 1 đặt ra là làm sao lấy được các thẻ <li> trong class box-1.
+ * Bài toán 2:
+ * Với công việc 1: sử dụng tới `boxNode`
+ * Với công việc 2: sử dụng tới các li elements là con của box-1
+ * Tương tự nếu muốn gọi các tagName khác là con của box-1, đều sử dụng cách trên.
+ * Coi bên file thực hành.*/ 
     
     
-  
-  
-  
-  
-  
-
-
