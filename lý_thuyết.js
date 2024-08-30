@@ -504,7 +504,7 @@ var myArray = [
  * Number.isInteger()                       Xác định xem giá trị đã cho có phải là số nguyên hay không. Trả về boolean
  * Number.parseFloat()                      Chuyển đổi chuỗi đã cho thành một số dấu phẩy động
  * Number.parseInt()                        Chuyển đổi chuỗi đã cho thành một số nguyên
- * Number.prototype.toFixed()               Chuyển đổi và trả về chuỗi đại diện cho số đã cho, có số chữ số chính xác sau dấu thập phân
+ * Number.prototype.toFixed()               Chuyển đổi và trả về chuỗi đại diện cho số đã cho, có số chữ số chính xác sau dấu thập phân. Kết quả trả về là 1 string chứ không phải number, nên cần parseFloat() hoặc parseInt() để đổi lại kiểu number.
  * Number.prototype.toString(               Chuyển đổi và trả về số đã cho dưới dạng chuỗi
  * 
  * Number.isFinite(2 / 0); // false
@@ -598,6 +598,7 @@ var myArray = [
  * 2. Join
  * Cú pháp:     console.log(languages.join('chuỗi muốn nối'))
  * Để trống thì sẽ các giá trị sẽ bị nối liền. Để ' ' thì sẽ cách ra.
+ * Khi join('') với mảng thì mảng đó sẽ thành chuỗi.
  * 
  * 3. Pop
  * Cú pháp:     console.log(languages.pop())
@@ -629,8 +630,8 @@ var myArray = [
  * 
  * 9. Slicing
  * Cú pháp:     console.log(languages.slice(số-vị-trí-index-bắt-đầu, số-vị-trí-index-kết-thúc))
- * Hàm này sẽ cắt ra các phần tử tính từ vị trí bắt đầu đến vị trí kết thúc.
- * Khác với các hàm cắt khác, là kết quả sẽ là các phần tử được cắt, chứ không phải cắt là xóa đi.
+ * Kết quả trả về là ký tự nằm trong khoảng bắt đầu và kết thúc.
+ * Hàm này giống "trích" ra chứ không phải cắt phần tử khỏi mảng.
  * Hoặc dùng để copy mảng (trick): console.log(slice(0));
  * Cũng có thể truyền vào giá trị âm, như đếm ngược vậy.
  * Lưu ý: số vị trí index != số vị trí phần tử. */ 
@@ -654,7 +655,7 @@ var myArray = [
  * VD:          myInfo.email = 'huyhoang4675@gmail.com'
  * 
  * Thêm 1 cặp key:value, mà tên key lại bị trùng với kí tự vi phạm:
- * Cú pháp:     tên-object[tên-key] = 'các value'
+ * Cú pháp:     tên-object['tên-key'] = 'các value'
  * VD:          myInfo['my-email'] = 'huyhoang4675@gmail.com'
  * 
  * Muốn lấy 1 giá trị ra khỏi object, cần biết key của nó là gì. Ví dụ muốn lấy Huy Hoàng từ myInfo:
@@ -1109,6 +1110,7 @@ var myArray = [
  * //Trả về true nếu tất cả các khoá học đều miễn phí, false nếu ngược lại.
  * 
  * Phương thức some() cũng duyệt từng phần tử như every(), nhưng some() chỉ cần 1 phần tử đúng điều kiện thì sẽ trả về true và dừng vòng lặp.
+ * Kết quả trả về là true/false.
  * var isFree = courses.some(function (course, index) {
  *.     console log(index) //in ra để thấy hàm đang xét tới đâu
  *      return course.coin === 0
@@ -1303,7 +1305,43 @@ var myArray = [
 
 // ==============================================================================================================================
 
+/** My some() method 
+ * 
+ * Đề và bài giải phia dưới. */ 
 
+// ==============================================================================================================================
+
+/** My every() method 
+ * 
+ * Đề và bài giải phia dưới.*/ 
+
+// ==============================================================================================================================
+
+/** HTML DOM là gì?
+ * DOM: Document Object Model (mô hình tài liệu đối tượng)
+ * DOM tuân theo quy chuẩn W3C (World Wide Web Consortium)
+ * DOM gồm 3 thành phần:
+ * 1. Element
+ * 2. Attribute
+ * 3. Text */ 
+
+// ==============================================================================================================================
+
+/** HTML DOM vs DOM API
+ * JavaScript # DOM như sau:
+ * 
+ * JavaScript được thực hiện ở trên Browser hoặc trên Server (NodeJS). Bản thân nó không có DOM.
+ * Browser thì có sẵn DOM, thông qua việc gọi WEB API khi khởi tạo 1 website. */ 
+
+// ==============================================================================================================================
+
+/** Document Object
+ * Học thêm cách viết vào HTML:
+ * 
+ * document.write('chuỗi muốn viết')
+ * Chuỗi muốn viết sẽ được ghi vào dòng cuối cùng trong <body> của file html.*/ 
+
+// ==============================================================================================================================
 
     
     

@@ -665,7 +665,7 @@ var watchList = [
     //     return khoaHoc.coin > 300
     // })
     // Làm sao cho giống cái filter() này là oke.
-    // Phương thức này cung chỉ duyệt các phần tử thực, không quan tâm đến biến khai báo length,
+    // Phương thức này cũng chỉ duyệt các phần tử thực, không quan tâm đến biến khai báo length,
     // hoặc khai báo mảng (var courses = new Array(1000)).
 
     Array.prototype.filter2 = function(callback){
@@ -703,4 +703,101 @@ var watchList = [
 
     // Giải thích:
     // Vì KQ mong muốn là 1 dạng so sánh, nên KQ là dạng boolean (true/false). Nên khi tạo phương thức filter2(),
-    // cần thêm 1 if để lấy KQ này, rồi push cái phần tử hiện tại đó vào mảng mới.
+    // cần thêm 1 if để lấy KQ này, nếu true thì push cái phần tử hiện tại đó vào mảng mới.
+
+// ==============================================================================================================================
+    
+// My some() method
+    
+    // let result4 = khoaHoc4.some(function(khoaHoc) {
+    //     return khoaHoc.isFinish == true
+    // })
+    // Làm sao cho giống cái filter() này là oke.
+    // Phương thức này cũng chỉ duyệt các phần tử thực, không quan tâm đến biến khai báo length,
+    // hoặc khai báo mảng (var courses = new Array(1000)).
+
+    // Array.prototype.some2 = function(callback) {
+    //     let output6 = false
+    //     for(var index in this) {
+    //         if(this.hasOwnProperty(index)){
+    //             if(callback(this[index], index)) {
+    //                 console.log(this[index])
+    //                 output6 = true
+    //                 break
+    //             }
+    //         }
+    //     }
+    //     return output6
+    // }
+    // Cách này cho kết quả giống cách dưới, chỉ khác là cách này đặt biến ở ngoài
+
+    Array.prototype.some2 = function(callback) {
+        for(var index in this) {
+            if(this.hasOwnProperty(index)){
+                if(callback(this[index], index)) {
+                    console.log(this[index])
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
+
+    let khoaHoc4 = [
+        {
+            name: 'JavaScript',
+            coin: 680,
+            isFinish: true
+        },
+        {
+            name: 'NodeJS',
+            coin: 860,
+            isFinish: true
+        },
+        {
+            name: 'Python',
+            coin: 980,
+            isFinish: false
+        }
+    ]
+
+    let result4 = khoaHoc4.some2(function(khoaHoc) {
+        return khoaHoc.isFinish;
+    })
+
+    console.log(result4)
+
+    // Giải thích:
+    // Cần thêm một hàm điều kiện: check nếu có phần tử nào đủ điều kiện, thì in ra rồi return true.
+    // Ngược lại, nếu không có phần tử nào thỏa mãn, return false.
+
+// ==============================================================================================================================
+
+// My every() method
+
+    //Bài này sử dụng mảng khoaHoc4 ở trên
+
+    Array.prototype.every2 = function(callback) {
+        var output7 = true
+        for(var index in this) {
+            if(this.hasOwnProperty(index)){
+                var result = callback(this[index], index, this)
+                console.log(result)
+                if(!result) {
+                    output7 = false
+                    break
+                }
+            }
+        }
+        return output7
+    }
+
+    let result5 = khoaHoc4.every2(function(khoaHoc) {
+        return khoaHoc.isFinish;
+    })
+
+    console.log(result5)
+
+    // Giải thích:
+    // Thêm một hàm điều kiện: chỉ cần một trong các phần tử trả về false, lập tức trả về false.
