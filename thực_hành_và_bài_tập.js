@@ -843,7 +843,7 @@ console.log(document.anchors)
 
 // ==============================================================================================================================
 
-// Get element methods -2
+// Get element methods - 2
 
     let listItemNodes = document.querySelectorAll('.box-1 li')
     console.log(listItemNodes)
@@ -853,3 +853,84 @@ console.log(document.anchors)
     console.log(boxNode.querySelectorAll('li'))
     //2 dòng này có nghĩa là, lấy boxNode gọi querySelectorAll, là lấy các thẻ <li> là con của .box-1
     //Hoặc có thể dùng: console.log(boxNode.getElementsByTagName('li')), KQ trả về là như nhau.
+
+// ==============================================================================================================================
+
+// DOM Attribute
+
+    var headingElement = document.querySelector('h1')
+    headingElement.style.color = 'blue'
+
+    //Một bài tập thực hành nhỏ. Bên file html mình đã set thẻ <h1> đầu tiên màu là red, nhưng ở file js mình đổi
+    //thành màu blue. Comment dòng sau để thấy nó thay đổi.
+
+// Thực hành với DOM Attribute
+    //Nhớ so với file index bên lý thuyết.
+    var h1Element = document.querySelector('h1')
+    h1Element.title = 'F8 - Học lập trình để đi làm'
+
+    h1Element.setAttribute('data-title', 'F8 - Học lập trình để đi làm')
+
+    var aElement = document.querySelector('a')
+    aElement.href = "https://fullstack.edu.vn/"
+
+    aElement.target = "_blank"
+
+// ==============================================================================================================================
+
+// InnerText vs textContent Property
+
+    console.log(headingElement.innerText)
+    console.log(headingElement.textContent)
+
+    var headingElement2 = document.querySelectorAll('h1')[3]
+
+    headingElement2.innerText = ` 
+    
+    New Heading`
+
+// ==============================================================================================================================
+
+// innerHTML vs outerHTML Property
+
+    var boxElement = document.querySelector('.box')
+    
+    boxElement.innerHTML = '<h1>Heading</h1>'
+
+    boxElement.outerHTML = '<span>Test</span>'
+
+    console.log(boxElement.innerHTML)
+
+    console.log(boxElement.outerHTML)
+
+// Thực hành sử dụng innerHTML #1
+
+    //Các bạn hãy viết hàm render nhận vào 1 tham số là html, hàm render sẽ có nhiệm vụ chèn giá trị của html vào 
+    //trong thẻ ul đã cho trước. Có chỉnh sủa lại khác với bài tập của thầy Sơn cho phù hợp file .html.
+
+    function render(html) {
+        var arr = document.querySelectorAll('ul')[2]
+        arr.innerHTML = html
+    }
+
+    render(`
+        <li>Khóa học HTML</li>
+        <li>Khóa học JS</li>
+        <li>Khóa học PHP</li>
+    `)
+
+// Thực hành sử dụng innerHTML #2
+
+    var courses3 = ['HTML & CSS', 'Javascript', 'PHP', 'Java']
+
+    function render2(john) {
+        // console.log(john);
+        var stringA = john.map(function (course3) {
+            return `<li>${course3}</li>`
+        }).join('')
+        // stringA = stringA.join('')
+        var ulElement = document.querySelector('ul')
+        ulElement.innerHTML = stringA
+    }
+
+    render2(courses3)

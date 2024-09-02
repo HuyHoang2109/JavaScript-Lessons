@@ -1336,10 +1336,11 @@ var myArray = [
 // ==============================================================================================================================
 
 /** Document Object
- * Học thêm cách viết vào HTML:
+ * Học thêm cách viết vào HTML DOM:
  * 
  * document.write('chuỗi muốn viết')
- * Chuỗi muốn viết sẽ được ghi vào dòng cuối cùng trong <body> của file html.*/ 
+ * Chuỗi muốn viết sẽ được ghi vào sau <script></script> của file html, hoặc nếu viết ở file html thì viết ở đâu,
+ * nó sẽ xuất hiện ở đó.*/ 
 
 // ==============================================================================================================================
 
@@ -1349,6 +1350,8 @@ var myArray = [
  * 
  * 2. Cú pháp get bằng ID:
  * document.getElementById('id của đối tượng muốn lấy') 
+ * 
+ * Kết quả trả về là element có id muốn lấy.
  * 
  * 3. Cú pháp get bằng className:
  * document.getElementsByClassName('className của đối tượng muốn lấy')
@@ -1375,7 +1378,7 @@ var myArray = [
  * document.querySelectorAll('selector muốn lấy')
  * VD: document.querySelectorAll('.heading')
  * 
- * Kết quả trả về là 1 NodeList, bao gồm các phần chứa selector muốn lấy.
+ * Kết quả trả về là 1 NodeList, bao gồm các phần tử chứa selector muốn lấy.
  * 
  * Bonus cách lấy phần tử từ NodeList:
  * console.log(tên-biến-lưu-trữ[vị-trí-phần-tử-muốn-lấy])
@@ -1408,5 +1411,177 @@ var myArray = [
  * Với công việc 2: sử dụng tới các li elements là con của box-1
  * Tương tự nếu muốn gọi các tagName khác là con của box-1, đều sử dụng cách trên.
  * Coi bên file thực hành.*/ 
+
+// ==============================================================================================================================
+
+/** Get element methods 2
+ * Ôn lại 5 phương thức đã học & sửa lỗi sai bài tập.
+ * 
+ * Cho file index.html như sau:
+ * 
+ * <h1> Học lập trình tại F8</h1>
+
+    <section> 
+        <h2>Học JS HTML DOM</h2>
+            </section>
+
+    <div>
+        <h3>Làm bài tập ngay trên F8</h3>
+    </div>
+
+    Yêu cầu:
+    1. Lấy h1 element và lưu vào biến h1Element
+    2. Lấy h2 element và lưu vào biến h1Element
+    3. Lấy h2 element và lưu vào biến h1Element
+
+    Cái sai ở đây là sử dụng getElementsByTagName thì sẽ trả về 1 HTML Collection chứ không phải biến đó.
+    -> sử dụng querySelector.
+    Nếu muốn sử dụng tagName, thì phải sử dụng gọi index từ mảng HTML Collection.
+    VD:
+    var h1Element = document.getElementsByTagName('h1')[0]
+    hoặc lấy ở console.log
+    var h1Element = document.getElementsByTagName('h1')
+    console.log(h1Element[0]) */
+
+// ==============================================================================================================================
+
+/** Attribute node & Text node
+ * 
+ * Attribute node là các thuộc tính. 
+ * Text Node là các phần chữ mình viết trong các cặp thẻ. */
+
+// ==============================================================================================================================
+
+/** DOM attribute
+ * 
+ * 1. Thêm attribute vào 1 cặp thẻ (mà không sửa file html):
+ * 
+ * var headingElement = document.querySelector('h1') //VD ở đây thẻ này là h1
+ * 
+ * Cú pháp: headingElement.title('Heading') 
+ * Mặc dù Inspect Element ra thấy, nhưng khi vào Page Source thì nó không có, vì nó chỉ thực hiện khi file JS được thực thi. 
+ * 
+ * Lưu ý, muốn thêm class thì sử dụng className chứ không phải class, vì trùng với từ khóa của quy chuẩn.
+ * Cách này không thêm được thuộc tính thuộc cặp thẻ đó. VD: không thêm được atr href nếu không phải thẻ <a>.
+ * VD: headingElement.className('Heading')
+ * 
+ * 2. Thêm attribute bằng phương thức
+ * 
+ * Cú pháp: headingElement.setAttribute('class', 'Heading')
+ * Phương thức nhận 2 đối số. Đối số 1: thuộc tính muốn thêm, đối số 2: tên thuộc tính.
+ * 
+ * Cách này thêm được các thuộc tính custom, cũng như thuộc tính không thuộc cặp thẻ đó.
+ * VD: headingElement.setAttribute('data-1', 'Heading')
+ * 
+ * 3. Lấy các thuộc tính 
+ * 
+ * Cú pháp: console.log(headingElement.getAttribute('class'))
+ * Vì phương thức này chỉ lấy, nên cần console.log để in ra.
+ * Phương thức nhận 1 đối số, là thuộc tính cần lấy. Cái gì setAttribute được thì đều getAttribute được.
+ *     
+ * Thực hành với DOM Attribute
+ * Cho sẵn file HTML, các bạn hãy thực hiện các yêu cầu sau:
+    
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>F8 - Học lập trình để đi làm</h1>
+        <p>Truy cập <a>fullstack.edu.vn</a> để học lập trình miễn phí các bạn nhé!!!</p>
+    </body>
+    </html>
+
+    1. Thêm thuộc tính title có giá trị "F8 - Học lập trình để đi làm" cho thẻ h1.
+    2. Thêm thuộc tính data-title có giá trị "F8 - Học lập trình để đi làm" cho thẻ h1.
+    3. Thêm thuộc tính href có giá trị "https://fullstack.edu.vn/" cho thẻ a.
+    4. Thêm thuộc tính target có giá trị "_blank" cho thẻ a. 
+    
+ * Bài giải phía dưới. */
+
+// ==============================================================================================================================
+    
+/** InnerText vs textContent Property
+ * 
+ * 1. InnerText
+ * var headingElement = document.querySelector('.heading')
+ * 
+ * Lấy ra:      console.log(headingElement.innerText)
+ * Sửa đổi:     headingElement.innerText = 'New heading'
+ * 
+ * 2. textContent
+ * Lấy ra:      console.log(heading.Element.textContent)
+ * Sửa đổi:     headingElement.textContent = 'New heading'
+ * 
+ * 3. Giống nhau
+ * Cả 2 đều là các phương thức thuộc Element node, có nghĩa muốn gọi Text node trong Element đó thì phải từ Element
+ * node đó gọi phương thức (nào đó) để get Text node, chứ bản thân Text node không có phương thức lấy ra.
+ * 
+ * 4. Khác biệt giữa InnerText & textContent
+ * 
+ * textContent là phương thức thuộc cả Element node và Text node.
+ * 
+ * Khi get bằng InnerText, nội dung lấy được sẽ giống nội dung thấy trên trình duyệt.
+ * Khi get bằng textContent, nội dung lấy được sẽ là nội dung thật, nằm trong DOM.
+ * 
+ * InnerText sẽ bỏ qua những thẻ span bên trong thẻ <h1>, và in ra nội dung thấy trên màn hình.
+ * TextContent sẽ in ra cả những khoảng trắng (là khoảng cách giữa các thẻ), và bỏ qua cả display: none luôn.
+ * 
+ * Khi sử dụng với ES6, sử dụng InnerText, thì mỗi dấu xuống dòng, nó sẽ được hiểu thành 1 thẻ break (<br>)
+ * Khi sử dụng với ES6, sử dụng textContent, thì chỉ xuống dòng thôi, không thành 1 thẻ break.
+ * 
+ * Xem ví dụ bên file thực hành.
+ * 
+ * 5. Ngoài lề:
+ * Tất cả những tag <a>, <meta>, <div>,... đều được xem là Element node. Vì vậy nên nội dung bên trong, ta xem
+ * như Text node. */
+
+// ==============================================================================================================================
+
+/** innerHTML vs outerHTML Property
+ * 
+ * 1. innerHTML
+ * a. Set
+ * Cú pháp: boxElement.innerHTML = '<h1>Heading</h1>'
+ * Có thể thêm cả Element node, Attribute và Text node luôn.
+ * VD: boxElement.innerHTML = '<h1 title = 'Heading'>Heading</h1>.
+ * 
+ * b. Get
+ * Cú pháp: console.log(boxElement.innerHTML)
+ * KQ trả về dạng chuỗi, là nội dung được thêm bằng innerHTML.
+ * 
+ * 2. outerHTML
+ * a. Set
+ * Cú pháp: boxElement.outerHTML = '<span>Test</span>'
+ * Nó sẽ ghi đè lên cái thẻ đang lấy -> nếu console.log(boxElement.innerHTML) sẽ in ra những thành phần không còn
+ * tồn tại -> đã sử dụng outer, tránh lấy biến đó gọi inner.
+ * Xem ở ví dụ file thực hành.
+ * 
+ * b. Get
+ * Cú pháp: console.log(boxElement.outerHTML)
+ * KQ trả về dạng chuỗi, là nội dung cũ trước khi bị outerHTML chiếm chỗ. Nội dung này chỉ được lưu trong bộ nhớ,
+ * không hiển thị lên website trừ khi được gọi tới.
+ * 
+ * 3. Giống nhau
+ * Cả 2 đều là phương thức thuộc Element node */ 
+
+// ==============================================================================================================================
+
+/** Thực hành sử dụng innerHTML #2
+    Các bạn hãy viết hàm render có 1 tham số courses, hàm render sẽ thêm các item của mảng courses để tạo thành
+    1 danh sách các khóa học trên giao diện.
+    Ví dụ: Với mảng var courses = ['ReactJS', 'AngularJS', 'VueJS'] sẽ thu được kết quả:
+    * ReactJS
+    * AngularJS
+    * VueJS
+
+    Gợi ý:
+    1. Sử dụng phương thức map kết hợp với join để tạo chuỗi HTML từ mảng courses.
+    2. Gán chuỗi HTML vừa tạo vào thuộc innerHTML của thẻ ul giống bài trước nhé. 
+    Bài giải ở file thực hành. */
+
+
+
     
     
