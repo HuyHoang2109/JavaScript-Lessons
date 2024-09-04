@@ -979,7 +979,60 @@ console.log(document.anchors)
         h2Elements[i].onclick = function(e) {
             console.log(e.target)
         }
-    }  
-    //Khi click vào sẽ in ra đối tượng nào đang được click
+    }//Khi click vào sẽ in ra đối tượng nào đang được click
+
+    // Thực hành sử dụng DOM Events
+
+    var buttonElement = document.querySelector('button')
+
+    buttonElement.onclick = function() {
+        return this.style.color = '#fff'
+    }
+
+// DOM Events Example
+
+    //Bài toán a.
+    let inputElement = document.querySelector('input[type="text"]')
+
+    let inputValue
+
+    inputElement.oninput = function(e) {
+        inputValue = e.target.value
+        console.log(inputValue)
+    }
+    //comment dòng console.log. Điền trực tiếp inputValue vào Console Tab trên trình duyệt để thấy nó lưu hết 1 lần
+    //chứ không lưu rồi xuất ra từng ký tự. Vì inputValue là biến global nên có thể làm được điều này.
+
+    //Bài toán b.
+    let checkboxElement = document.querySelector('input[type="checkbox"]')
+
+    checkboxElement.onchange = function(e) {
+        console.log(e.target.checked)
+    }
+
+    //Bài toán c.
+    let selectElement = document.querySelector('select')
+
+    selectElement.onchange = function(e) {
+        console.log(e.target.value)
+    }//Lưu ý: giá trị của thuộc tính value và cái hiển thị trên màn hình (text node) có thể khác nhau.
+
+    //Bài toán d.
+        //Bài này sử dụng inputElement ở phía trên
+    
+    inputElement.onkeyup = function(e) {
+        console.log(e.which)
+        switch(e.which) {
+            case 27:
+                console.log('Escape')
+                break
+        }
+    }//which sẽ cho mình biết được mã phím mình vừa bấm. Thêm switch để rõ hơn.
+
+// ==============================================================================================================================
+
+// PreventDefault and StopPropagation
+    
+
 
     

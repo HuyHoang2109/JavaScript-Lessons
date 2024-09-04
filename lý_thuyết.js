@@ -1628,7 +1628,6 @@ var myArray = [
  * 5. Replace (không có trong bài học, mà sử dụng ở phần bài tập)
  * Cú pháp: boxElement.classList.replace('tên-class-muốn-thay', 'tên-class-sẽ-thay') */
 
-//
 
 /** Thực hành sử dụng classList #2 
  * Cho trước file HTML có các thẻ div, các bạn hãy thêm class box vào các thẻ div này nhé.
@@ -1652,7 +1651,33 @@ var myArray = [
  * 20:00
  * 
  * Các sự kiên học trong video: onclick, onmouseover, sự kiện nổi bọt (phút 12:00 coi cho rõ)
- * 2. Assign events using the element node*/ 
+ * 
+ * 2. Assign events using the element node */ 
+
+
+/** Thực hành sử dụng DOM Events
+ * 
+ * Cho trước thẻ button, các bạn hãy viết code JS sao cho khi click vào button sẽ đổi màu chữ button sang màu #fff.
+ * Bài giải bên file thực hành. */
+
+
+/** DOM Events Example
+ * 1. Input/Select
+ * 2. Key up/down
+ * 
+ * Bài toán đặt ra là:
+ * a. Với ô input thì lấy được value
+ * b. Với ô checkbox thì lấy được thông tin người dùng có đang check không
+ * c. Với ô select thì lấy được đang select thằng nào
+ * d. Với ô input thì lấy được phím nào người dùng nhấn. 
+ * 
+ * Tổng kết:
+ * Với Input/Select thì sử dụng onchange, oninput
+ * Với Key up/down thì sử dụng onkeyup, onkeydown, onkeypress */ 
+
+// ==============================================================================================================================
+
+/** PreventDefault and StopPropagation */
 
 
 
