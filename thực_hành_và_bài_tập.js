@@ -934,3 +934,52 @@ console.log(document.anchors)
     }
 
     render2(courses3)
+
+
+// ==============================================================================================================================
+
+// DOM CSS
+
+    boxElement.style.width = '100px'
+    boxElement.style.height = '200px'
+    boxElement.style.backgroundColor = 'red'
+    //Comment dòng boxElement.outerHTML bên trên mới thấy được sự thay đổi
+    //Tên biến divElement có đổi lại cho phù hợp.
+
+    var divElementRed = document.querySelector('div.red')
+
+    Object.assign(divElementRed.style, {backgroundColor: '#f00'})
+
+    var pElement = document.querySelector('p')
+
+    Object.assign(pElement.style, {color: '#f05123'})
+
+// ==============================================================================================================================
+
+// ClassList Property
+    // Bài toán: có sẵn 1 class .blue trong thẻ <style>. Dùng phương thức này để thêm class .blue vào trong thẻ <h1>
+    let boxElement2 = document.querySelectorAll('#heading')[1]
+    console.log(boxElement2)
+    boxElement2.classList.add('blue')
+
+// Thực hành sử dụng classList #2
+    //Để không ảnh hưởng file index, mình sẽ thêm class .blue chứ không thêm class .box
+    let divElement = document.querySelectorAll('div')
+    divElement.forEach(function(abc) {
+        abc.classList.add('blue')
+    })
+
+// ==============================================================================================================================
+
+// DOM Events
+    
+    let h2Elements = document.querySelectorAll('h2')
+
+    for(var i = 0; i < h2Elements.length; i++) {
+        h2Elements[i].onclick = function(e) {
+            console.log(e.target)
+        }
+    }  
+    //Khi click vào sẽ in ra đối tượng nào đang được click
+
+    

@@ -1502,9 +1502,9 @@ var myArray = [
 
 // ==============================================================================================================================
     
-/** InnerText vs textContent Property
+/** innerText vs textContent Property
  * 
- * 1. InnerText
+ * 1. innerText
  * var headingElement = document.querySelector('.heading')
  * 
  * Lấy ra:      console.log(headingElement.innerText)
@@ -1518,17 +1518,17 @@ var myArray = [
  * Cả 2 đều là các phương thức thuộc Element node, có nghĩa muốn gọi Text node trong Element đó thì phải từ Element
  * node đó gọi phương thức (nào đó) để get Text node, chứ bản thân Text node không có phương thức lấy ra.
  * 
- * 4. Khác biệt giữa InnerText & textContent
+ * 4. Khác biệt giữa innerText & textContent
  * 
  * textContent là phương thức thuộc cả Element node và Text node.
  * 
- * Khi get bằng InnerText, nội dung lấy được sẽ giống nội dung thấy trên trình duyệt.
+ * Khi get bằng innerText, nội dung lấy được sẽ giống nội dung thấy trên trình duyệt.
  * Khi get bằng textContent, nội dung lấy được sẽ là nội dung thật, nằm trong DOM.
  * 
  * InnerText sẽ bỏ qua những thẻ span bên trong thẻ <h1>, và in ra nội dung thấy trên màn hình.
  * TextContent sẽ in ra cả những khoảng trắng (là khoảng cách giữa các thẻ), và bỏ qua cả display: none luôn.
  * 
- * Khi sử dụng với ES6, sử dụng InnerText, thì mỗi dấu xuống dòng, nó sẽ được hiểu thành 1 thẻ break (<br>)
+ * Khi sử dụng với ES6, sử dụng innerText, thì mỗi dấu xuống dòng, nó sẽ được hiểu thành 1 thẻ break (<br>)
  * Khi sử dụng với ES6, sử dụng textContent, thì chỉ xuống dòng thôi, không thành 1 thẻ break.
  * 
  * Xem ví dụ bên file thực hành.
@@ -1569,6 +1569,7 @@ var myArray = [
 // ==============================================================================================================================
 
 /** Thực hành sử dụng innerHTML #2
+ * 
     Các bạn hãy viết hàm render có 1 tham số courses, hàm render sẽ thêm các item của mảng courses để tạo thành
     1 danh sách các khóa học trên giao diện.
     Ví dụ: Với mảng var courses = ['ReactJS', 'AngularJS', 'VueJS'] sẽ thu được kết quả:
@@ -1580,6 +1581,78 @@ var myArray = [
     1. Sử dụng phương thức map kết hợp với join để tạo chuỗi HTML từ mảng courses.
     2. Gán chuỗi HTML vừa tạo vào thuộc innerHTML của thẻ ul giống bài trước nhé. 
     Bài giải ở file thực hành. */
+
+// ==============================================================================================================================
+
+/** DOM CSS
+ * 
+ * 1. Truyền 1 thuộc tính
+ * Cú pháp: tên-biến.style.tên-thuộc-tính-muốn đặt = 'giá-trị'
+ * VD: boxElement.style.width = '100px'
+ * 
+ * 2. Truyền nhiều thuộc tính
+ * Cú pháp: 
+ * Object.assign(boxElement.style, {
+ *      width: '200px'
+ *      height: '100px'
+ *      backgroundColor: 'red'
+ * })
+ * 
+ * DOM CSS này sẽ CSS inline vào file html, chứ không CSS internal hay external. 
+ * 
+ * Khi console.log(boxElement.style), KQ trả về là 1 CSSStyleDeclaration, bao gồm các thuộc tính có thể CSS.*/ 
+
+// ==============================================================================================================================
+
+/** ClassList Propery
+ * 
+ * Đây là thuộc tính thuộc Element node.
+ * Khi console.log(boxElement.classList), KQ trả về là 1 DOMTokenList, gồm class của element được gọi tới, dưới dạng giống mảng,
+ * nên có thể truy xuất với các phương thức .length, .value hay [i] đều được.
+ * 
+ * 1. Add
+ * Cú pháp: boxElement.classList.add('tên-class-muốn-thêm', 'tên-class-muốn-thêm',...)
+ * Thêm nhiều class thì ngăn cách bằng dấu phẩy.
+ * 
+ * 2. Contains
+ * Dùng để kiểm tra class đó có tồn tại không. KQ trả về là true/false.
+ * Cú pháp: boxElement.classList.contains('tên-class-muốn-kiểm-tra')
+ * 
+ * 3. Remove
+ * Cú pháp: boxElement.classList.remove('tên-class-muốn-gỡ')
+ * 
+ * 4. Toggle
+ * Khi được gọi, nó sẽ kiểm tra có class đó không. Nếu có thì nó sẽ gỡ bỏ, nếu không có thì nó thêm vào.
+ * Cú pháp: boxElement.classList.toggle('tên-class-muốn-gỡ-hoặc-thêm')
+ * 
+ * 5. Replace (không có trong bài học, mà sử dụng ở phần bài tập)
+ * Cú pháp: boxElement.classList.replace('tên-class-muốn-thay', 'tên-class-sẽ-thay') */
+
+//
+
+/** Thực hành sử dụng classList #2 
+ * Cho trước file HTML có các thẻ div, các bạn hãy thêm class box vào các thẻ div này nhé.
+ * Gợi ý: Bạn có thể sử dụng forEach lặp qua các phần tử div, nhưng trước hết các bạn phải 
+ * lấy được danh sách các phần tử div ra nhé.
+ * 
+ * Bài giải ở file thực hành. */
+
+// ==============================================================================================================================
+
+/** DOM events 
+ * Là những hành động mà người dùng tương tác với website
+ * 
+ * 1. Attribute events
+ * Bài toán 1: Khi click vào thẻ <h1> chứa DOM Events, thì console.log ra 1 dãy số ngẫu nhiên.
+ * Bài toán 2: Khi click vào thẻ <h1> chứa DOM Events, thì console.log ra đoạn text trong thẻ.
+ * Bài toán 3: Khi click vào thẻ nào, thì in ra text Node của thẻ đó.
+ * 
+ * Bài toán 1 2, giải ở dòng chứa thẻ <h1> bên index.html
+ * Bài toán 3 bên file thực hành.
+ * 20:00
+ * 
+ * Các sự kiên học trong video: onclick, onmouseover, sự kiện nổi bọt (phút 12:00 coi cho rõ)
+ * 2. Assign events using the element node*/ 
 
 
 
