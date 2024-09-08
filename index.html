@@ -9,6 +9,14 @@
         .blue {
             color: blue;
         }
+
+        .preventDefaultUl {
+            display: none;
+        }
+
+        .preventDefaultInput:focus ~ .preventDefaultUl {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -17,10 +25,19 @@
     <form action="" id="form-2"></form>
     <form action="" id="testForm"></form>
 
-    <a href="" name="youtube">My Youtube</a>
+    <!-- Thẻ <a> này thực hành DOM Attributes -->
+    <a href="" style="font-size: 32px;">
+        My F8</a>
+
+        <br>
+
+    <!-- 2 thẻ <a> này lý thuyết bài preventDefault -->
+    <a href="https://www.youtube.com" name='youtube' style="font-size: 32px;">My Youtube</a><br>
+    <a href="https://www.google.com" name='google' style="font-size: 32px;">My Google</a>
 
     <!-- <h1 class="heading">Heading text</h1> -->
     
+    <!-- Thực hành với DOM Attribute -->
     <h1 class="heading">
 
         <span style="display: none;">Heading</span>
@@ -28,20 +45,29 @@
 
 
     </h1>
+
+    <!-- DOM Attribute -->
     <h1 id="heading" style="color: red;">JavaScript</h1>
+
+    <!-- ClassList Property -->
     <h1 id="heading">JavaScript</h1>
+    
     <h1 class="heading">JavaScript</h1>
     <h1 class="heading">JavaScript</h1>
 
+    <!-- Bài tập Math Objects -->
     <h1 onclick="console.log(Math.random())">DOM Events</h1>
     <h1 onclick="console.log(this.innerText)">DOM Events</h1>
 
+    <!-- DOM Events -->
     <h2>DOM Events 1</h2>
     <h2>DOM Events 2</h2>
     <h2>DOM Events 3</h2>
 
+    <!-- Thực hành sử dụng DOM Events -->
     <button style="background-color: orange;">Button</button>
 
+    <!-- DOM Events Example -->
     <input type="text">
     <input type="checkbox">
 
@@ -51,6 +77,7 @@
         <option value="value3">3</option>
     </select>
 
+    <!-- Get elements method -2  -->
     <div class="box-1">
         <ul>
             <li>JavaScript1</li>
@@ -65,6 +92,7 @@
         </ul>
     </div>
 
+    <!-- DOM CSS -->
     <div class="red">Đổi màu thẻ div này thành màu #f00</div>
     <p>F8 - Học lập trình để đi làm</p>
 
@@ -72,9 +100,30 @@
         
     </div>
 
+    <!-- Thực hành sử dụng innerHTML #1 -->
     <ul>
         
     </ul>
+
+    <!-- PreventDefault and StopPropagation -->
+    <input type="text" placeholder="Tìm kiếm" class="preventDefaultInput">
+    <ul class="preventDefaultUl">
+        <li>JavaScript</li>
+        <li>PHP</li>
+        <li>Golang</li>
+    </ul>
+
+    <div class="stopPropagationDiv">
+        DIV
+        <button class="stopPropagationBtn">Click me!</button>
+    </div>
+    <br/>
+    <!-- Chữ DIV bị xanh do bài tập Classlist Properties -->
+
+    <!-- Event Listener -->
+    <button id="btn">
+        Cick me 2!
+    </button>
 
     <script src="./lý_thuyết.js"></script>
     <script src="./thực_hành_và_bài_tập.js"></script>

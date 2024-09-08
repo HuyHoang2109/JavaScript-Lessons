@@ -1399,6 +1399,7 @@ var myArray = [
  * document.tên-tag
  * VD: document.anchors, document.images
  * Với VD trên, KQ trả về là tất cả thẻ <a> có thuộc tính name. Còn nếu không có thì sẽ là một mảng HTML Collection trống.
+ * -> các thẻ được get bằng tag phải có thuộc tính name.
  * 
  * Bài thực hành giải phía dưới. */ 
 
@@ -1677,7 +1678,32 @@ var myArray = [
 
 // ==============================================================================================================================
 
-/** PreventDefault and StopPropagation */
+/** PreventDefault and StopPropagation 
+ * 
+ * 1. PreventDefault
+ * Ngăn chặn hành vi mặc định của trình duyệt trên file HTML.
+ * 
+ * Bài toán 1:
+ * Có 2 thẻ <a>. Làm sao bấm vào thẻ có đường dẫn tới F8 thì mới chuyển trang, còn cái kia thì không làm gì cả.
+ * Mình sửa lại thành Youtube, vì có sẵn thẻ Youtube từ bài trước.
+ * 
+ * Bài toán 2:
+ * Có 1 thẻ <input>. Khi focus vào ô input thì hiện ra danh sách các khóa học. Và khi danh sách hiện ra thì phải bấm vào chọn được, chứ không mất đi.
+ * 
+ * 2. StopPropagation
+ * Loại bỏ sự kiện nổi bọt
+ * 
+ * Bài toán:
+ * Có 2 thẻ <div> và <button>. Khi nhấn vào thẻ nào thì in ra thẻ đó. Vấn đề nằm ở <button>. Khi ấn vào thì nó in ra luôn chữ DIV trong thẻ <div>, do sự kiện nổi bọt.
+ * 
+ * Bài giải bên file thực hành. */
+
+// ==============================================================================================================================
+
+/** Event Listener
+ * 1. Xử lý nhiều việc khi 1 event xảy ra
+ * 2. Lắng nghe/hủy bỏ lắng nghe
+*/
 
 
 

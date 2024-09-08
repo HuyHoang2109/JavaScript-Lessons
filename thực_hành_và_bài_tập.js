@@ -1032,6 +1032,59 @@ console.log(document.anchors)
 // ==============================================================================================================================
 
 // PreventDefault and StopPropagation
+
+    //PreventDefault
+    //Bài toán 1
+    //Bài này chỉ lấy 2 thẻ <a> là My Google với My Youtube, mà chỉ có My Youtube mới chuyển trang
+
+    aElements = document.anchors
+
+    for(var i = 0; i < aElements.length; i++) {
+        aElements[i].onclick = function(e) {
+            if(!e.target.href.startsWith('https://www.youtube.com')) {//startsWith là phương thức của ES6 JS.
+                e.preventDefault()
+            }
+        }
+    }
+
+    //Bài toán 2
+    var ulPreventElement = document.querySelector('.preventDefaultUl')
+
+    ulPreventElement.onmousedown = function(e){
+        e.preventDefault()
+    }
+    //Khi nhấn chuột xuống là danh sách khóa học biến mất rồi, nên ta cần ngăn chặn hành động này xảy ra.
+
+    ulPreventElement.onclick = function(e) {
+        console.log(e.target)
+    }
+
+    //StopPropagation
+
+    var stopPropagationDiv = document.querySelector('.stopPropagationDiv')
+
+    var stopPropagationBtn = document.querySelector('.stopPropagationBtn')
+
+    stopPropagationDiv.onclick = function() {
+        console.log('DIV')
+    }//Chỉ in ra, không có trả về nên không có e
+
+    stopPropagationBtn.onclick = function(e) {
+        e.stopPropagation()
+        console.log('Click me!')
+    }
+
+// ==============================================================================================================================
+
+// Event Listener
+
+    var btn = document.getElementById('btn')
+    
+    btn.onclick = function () {
+        // 8:20
+    }
+
+
     
 
 
