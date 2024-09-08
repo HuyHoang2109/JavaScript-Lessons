@@ -1080,9 +1080,22 @@ console.log(document.anchors)
 
     var btn = document.getElementById('btn')
     
-    btn.onclick = function () {
-        // 8:20
+    btn.addEventListener('click', function(e) {
+        console.log(Math.random())
+    })
+
+    function viec1() {
+        console.log('Viec 1')
     }
+
+    btn.addEventListener('click', viec1)
+
+    setTimeout(function() {
+        btn.removeEventListener('click', viec1)
+    }, 3000)
+
+// ==============================================================================================================================
+
 
 
     

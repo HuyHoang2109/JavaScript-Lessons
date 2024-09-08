@@ -1701,8 +1701,31 @@ var myArray = [
 // ==============================================================================================================================
 
 /** Event Listener
+ * 
  * 1. Xử lý nhiều việc khi 1 event xảy ra
+ * Cú pháp: tên-biến.addEventListener('eventName', 1 function callback)
+ * VD: btn.addEventListener('click', function(e) {
+ *      console.log(Math.random())
+ * 
  * 2. Lắng nghe/hủy bỏ lắng nghe
+ * Cú pháp: tên-biến.removeEventListener('eventName', eventListener-muốn-gỡ)
+ * VD khi muốn hủy 1 eventListener sau 3s:
+ * setTimeout(funtion() {
+ *      btn.removeEventListener('click', viec1)
+ * }, 3000)
+ * 
+ * Có thể gọi nhiều eventListener, và nó sẽ thực hiện theo thứ tự từ trên xuống dưới.
+ * 
+ * 3. Khác nhau giữa DOM Events với Event Listener
+ * a. DOM Events sẽ sử dụng cho những trường hợp đơn giản, muốn lắng nghe 1 sự kiện nhưng không có nhu cầu hủy bỏ nó.
+ * b. Event Listener thì có công dụng như 1 và 2 nhỏ. */
+
+// ==============================================================================================================================
+
+/** JSON
+ * 1. Là một định dạng dữ liệu (chuỗi)
+ * 2. JavaScript Object Notation
+ * 3. 3:00
 */
 
 
