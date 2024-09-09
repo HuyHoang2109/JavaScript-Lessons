@@ -1723,9 +1723,82 @@ var myArray = [
 // ==============================================================================================================================
 
 /** JSON
+ * 
  * 1. Là một định dạng dữ liệu (chuỗi)
  * 2. JavaScript Object Notation
- * 3. 3:00
+ * 3. JSON thể hiện được các dạng dữ liệu: number, string, boolean, null, array, object
+ * 4. Mã hóa/Giải mã (Encode/Decode)
+ * 5. Stringify/Parse: chuyển đổi dữ liệu sang JSON/trả về kiểu dữ liệu ban đầu
+ * 
+ * Cú pháp:
+ * var json = '1'           ->      dạng number
+ * var json = 'null'        ->      dạng null
+ * var json = 'true'        ->      dạng boolean
+ * var json = '["John", "Harry"]'       ->      dạng array (ngăn cách các key dạng chuỗi bằng nháy kép, ngăn cách các phần tử bằng dấu phẩy)
+ * var json = '{"name": "Huy Hoàng", "age": 22}'       ->      dạng object */
+
+// ==============================================================================================================================
+
+/** Promise
+ * 
+ * 1. Sync - chạy theo luồng/tuần tự
+ * VD:
+ * console.log(1)
+ * console.log(2)
+ * -> In ra cả 2 số, theo thứ tự từ trên xuống -> đồng bộ
+ * 
+ * 2. Async - chạy không theo luồng
+ * a. setTimeout, setInterval, fetch, XMLHttpRequest, các phương thức File Reading, các phương thức request animation frame
+ * b. VD:
+ * setTimeout(function(){
+ *      console.log(1)
+ * }, 1000)
+ * console.log(2)
+ * -> In ra số 2 trước, 1 giây sau mới in ra số 1 -> thật ra là console.log(1) chạy trước, nhưng tới 1 giây sau nó mới hiện, còn console.log(2) hiện ra liền
+ * -> bất đồng bộ
+ * 
+ * 3. Pain
+ * a. Callback hell (VD bên file thực hành)
+ * b. Pyramid of doom
+ * 
+ * 4. Promise -> cách hoạt động
+ * Cú pháp:
+ * var promise = new Promise (function(resolve, reject) {
+ * })
+ * 
+ * Ba trạng thái của Promise:
+ * a. Pending - đang chờ, xảy ra khi chưa khai báo trường hợp nào
+ * b. Fulfilled - xảy ra trong trường hợp resolve
+ * c. Rejected - xảy ra trong trường hợp reject
+ * 
+ * Sau khi khởi tạo phương thức thành công thì có thể gọi phương thức đó qua 3 phương thức:
+ * .then(function() {}) -> được gọi khi resolve (hiểu đơn giản là thành công thì làm gì)
+ * .catch(function() {}), -> được gọi khi reject (hiểu đơn giản là khi thất bại thì bắt lỗi)
+ * .finally(function() {}) -> được gọi, không cần biết resole hay reject
+ * 
+ * 5. Bonus trả lời phỏng vấn:
+ * Là khái niệm sinh ra để giúp chúng ta xử lý những thao tác bất đồng bộ. Trước khi có Promise thì chúng ta sử dụng Callback, và khi sử dụng Callback thì nó hay
+ * xảy ra trường hợp Callback Hell, làm cho code rối rắm hơn -> thằng Promise sinh ra để khắc phục tình trạng này -> giúp code dễ đọc dễ hiểu hơn.
+ * 
+ * Để tạo 1 thằng Promise thì chúng ta sử dụng từ khóa new Prommise. Và trong constructor của nó thì truyền vào 1 Executor là 1 function. Trong Executor function,
+ * ta nhận 2 tham số dạng hàm, 1 là resolve, 2 là reject. Resolve được gọi khi thao tác xử lý thành công, Reject được gọi khi thao tác xử lý thất bại.
+ * 
+ * Khi sử dụng Promise thì chúng ta có 3 phương thức để gọi (như lý thuyết bên trên). */
+
+/** Promise (chain) 
+ * 
+ * Promise có tính chất chuỗi, chạy từ trên xuống dưới. Cũng lấy data từ trên để gán cho thằng dưới nhưng không bị "lùi dần" vào -> không bị Callback Hell.
+ * 
+ * Trong function callback của .then(), miễn sao không return một new Promise thì nó sẽ chạy như bình thường:
+ * a. return value -> value; return nothing -> undefined
+ * b. return một new Promise thì nó phải chạy xong Promise đó rồi mới chạy tiếp thằng đằng sau
+ * 
+ * Bài toán: sử dụng Promise để thực hiện, cứ 1 giây thì in ra STT tăng dần. VD: 1 giây đầu in ra 1, 1 giây sau in ra 2,... */
+
+// ==============================================================================================================================
+
+/** Promise Methods
+ * 
 */
 
 

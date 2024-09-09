@@ -1096,6 +1096,165 @@ console.log(document.anchors)
 
 // ==============================================================================================================================
 
+// JSON
+
+    var a = '["John", "Harry"]'
+    console.log(JSON.parse(a))
+    console.log(JSON.stringify(['John', 'Harry']))//Kết quả là dạng chuỗi
+    console.log(JSON.stringify({"name": "Huy Hoàng", "age": 22}))
+
+// ==============================================================================================================================
+
+// Promise
+
+    //VD về Callback Hell
+    // setTimeout(function(){
+    //     console.log(1)
+    //     setTimeout(function() {
+    //         console.log(2)
+    //         setTimeout(function() {
+    //             console.log(3)
+    //             setTimeout(function() {
+    //                 console.log(4)
+    //             }, 1000)
+    //         }, 1000)
+    //     }, 1000)
+    // }, 1000)
+
+    //Promise
+    var promise = new Promise (
+        function (resolve, reject) {
+            //Fake call API
+            // resolve([
+            //     {
+            //         id: 1,
+            //         name: 'John'
+            //     }
+            // ])
+
+            reject('Co loi!')
+        }
+    )
+
+    promise
+        .then(function(course) {
+            console.log('Successfully!')
+            console.log(course)
+        })
+        .catch(function(error) {
+            console.log('Failure!')
+            console.log(error)
+        })//Muốn thằng catch() thực thi thì phải comment thằng resolve
+        // .finally(function() {
+        //     console.log('Done!')
+        // })
+
+    //VD về việc promise giải quyết Callback Hell
+    var promise2 = new Promise (
+        function (resolve, reject) {
+            resolve()
+        }
+    )
+
+    promise2
+        .then(function() {
+            return 1
+        })
+        .then(function(data) {
+            console.log(data)
+            return 2
+        })
+        .then(function(data) {
+            console.log(data)
+            return 3
+        })
+        .then(function(data) {
+            console.log(data)
+        })
+        //Đoạn này là VD return một new Promise
+        .then(function() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve([1,2,3])
+                }, 1000)
+            })
+        })
+        // .then(function(data){
+        //     console.log(data)
+        // })
+        //Cái này chạy theo tuần tự từ trên xuống dưới, mặc dù cũng là lấy data từ thằng trước để gán vào thằng sau -> không bị Callback Hell và rõ nghĩa.
+
+    //Bài toán Promise (tương tự như VD Callback Hell, nhưng sử dụng Promise)
+    function sleep(ms) {
+        return new Promise(function(resolve) {
+            setTimeout(resolve, ms)
+        })
+    }//Hàm sleep() trả về 1 Promise -> về cơ bản, sleep() chính là một Promise
+    // Promise thực hiện setTimeout -> có nghĩa là hàm sleep truyền vào bao nhiêu ms, thì sau ms mới thực hiện việc resolve.
+
+    sleep(1000)
+        .then(function() {
+            console.log(1)
+            return sleep(1000)
+        })
+        //Vì sleep() là một Promise, nên khi return, phải thực hiện xong Promise đó rồi mới nhảy xuống chạy tiếp phía dưới.
+        .then(function() {
+            console.log(2)
+            return sleep(1000)
+        })
+        .then(function() {
+            console.log(3)
+            return sleep(1000)
+        })
+        .then(function() {
+            console.log(4)
+            return sleep(1000)
+        })
+
+    //VD khác về Callback Hell và khi sử dụng Promise để thay thế
+    function hell(value, cb) {
+        cb(value);
+    }
+    
+        // Không sử dụng Promise dẫn đến tạo ra callback hell 
+    hell(1, function (valueFromA) {
+        hell(valueFromA + 1, function (valueFromB) {
+            hell(valueFromB + 1, function (valueFromC) {
+                hell(valueFromC + 1, function (valueFromD) {
+                    console.log(valueFromD + 1);
+                });
+            });
+        });
+    });
+    
+        // Sử dụng Promise sẽ tạo ra đoạn code dễ đọc hơn và vẫn đảm bảo đúng logic
+    function notHell(value) {
+        return new Promise(function (resolve) {
+            resolve(value);
+        });
+    }
+    
+    notHell(1)
+        .then(function (value) {
+            return value + 1;
+        })
+        .then(function (value) {
+            return value + 1;
+        })
+        .then(function (value) {
+            return value + 1;
+        })
+        .then(function (value) {
+            console.log(value + 1);
+        });
+    
+// ==============================================================================================================================
+
+// Promise Methods
+    
+    
+    
+        
 
 
     
