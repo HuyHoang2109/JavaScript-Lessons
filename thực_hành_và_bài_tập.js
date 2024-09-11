@@ -577,7 +577,7 @@ var watchList = [
         var output2 = []
         
         for(var i = 0; i < arrayLength; i++){
-            var result2 = callback(this[i])
+            let result2 = callback(this[i])
             output2.push(result2)
         }
         return output2
@@ -1252,7 +1252,26 @@ console.log(document.anchors)
 
 // Promise Methods
     
-    
+    let promise3 = new Promise (function (resolve) {
+        setTimeout(function(){
+            resolve([1])
+        }, 1000)
+    })
+
+    let promise4 = new Promise (function (resolve) {
+        setTimeout(function(){
+            resolve([2, 3])
+        }, 2000)
+    })
+
+    Promise.all([promise3, promise4])
+        .then(function(result) {
+            console.log(result)//Log ra được 2 mảng, nhưng chưa nối với nhau, nên mới có mấy dòng code sau
+            let result1 = result[0]
+            let result2 = result[1]
+
+            console.log(result1.concat(result2))
+        })
     
         
 

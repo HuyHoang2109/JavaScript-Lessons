@@ -1207,7 +1207,7 @@ var myArray = [
 
 /** Ví dụ Array reduce() method #1
  * Flat - "Làm phẳng" mảng từ Depth Array (Mảng sâu)
- * Đề và bài giải phía dưới: Line 1644
+ * Đề và bài giải phía dưới.
  * 
  * Ví dụ Array reduce() method #2
  * Lấy ra các khóa học đưa vào 1 mảng mới
@@ -1799,6 +1799,25 @@ var myArray = [
 
 /** Promise Methods
  * 
+ * 1. Promise.resolve
+ * Cú pháp: var promise = Promise.resolve('')
+ * Với cú pháp trên, sẽ tạo ra một promise luôn thành công.
+ * 
+ * 2. Promise.reject
+ * Cú pháp: var promise = Promise.reject('')
+ * Với cú pháp trên, sẽ tạo ra một promise luôn thất bại.
+ * 
+ * 3. Promise.all
+ * Dành cho những luồng Promise bất đồng bộ nhưng không phụ thuộc lẫn nhau, và muốn những luồng đó chạy song song nhau.
+ * Bắt buộc những luồng phải thành công thì mới sử dụng được .all.
+ * Bài toán: Hợp nhất 2 mảng của 2 Promise thành 1.
+ * Bài giải bên file thực hành. */
+
+// ==============================================================================================================================
+
+/** Promise Example
+ * 
+ * Xem lại nguyên video để hiểu thêm.
 */
 
 
