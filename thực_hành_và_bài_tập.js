@@ -981,6 +981,13 @@ console.log(document.anchors)
         }
     }//Khi click vào sẽ in ra đối tượng nào đang được click
 
+    // h2Elements.forEach(function(h2) {
+    //     h2.onclick = function(e) {
+    //         console.log(e.target)
+    //     }
+    // })
+    // Cũng giống cách trên, nhưng sử dụng phương thức forEach()
+
     // Thực hành sử dụng DOM Events
 
     var buttonElement = document.querySelector('button')
@@ -1272,6 +1279,36 @@ console.log(document.anchors)
 
             console.log(result1.concat(result2))
         })
+
+// ==============================================================================================================================
+
+// Fetch
+    var postAPI = 'https://jsonplaceholder.typicode.com/posts'
+    fetch(postAPI)
+        .then(function (response) {
+            return response.json()
+            //JSON.parse: JSON -> JavaScript type (in this case, the result is an array of objects (each representing a post))
+        })
+        // .then(function (posts) {
+        //     console.log(posts)
+        // })
+        //Tới đây là hiện xong tất cả thông tin rồi, nhưng cần lấy theo yêu cầu cụ thể nên phải code tiếp
+        .then(function(posts) {
+            let htmls2 = posts.map(function(post) {
+                return `<li>
+                    <h2>${post.title}</h2>
+                    <p>${post.body}</p>
+                </li>`
+            })
+
+            let html2 = htmls2.join('')
+            document.getElementById('post-block').innerHTML = html2
+
+        })
+
+// ==============================================================================================================================
+
+// JSON Server
     
         
 

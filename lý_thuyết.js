@@ -1649,7 +1649,11 @@ var myArray = [
  * 
  * Bài toán 1 2, giải ở dòng chứa thẻ <h1> bên index.html
  * Bài toán 3 bên file thực hành.
- * 20:00
+ * 
+ * Giải thích code bài toán 3:
+ * In this code, you're using document.querySelectorAll('h2') to select all <h2> elements on the page. The reason you need a for loop 
+ * here is because document.querySelectorAll() returns a NodeList, which is like an array of elements. To add an onclick event listener 
+ * to each <h2> element, you need to loop through each one individually.
  * 
  * Các sự kiên học trong video: onclick, onmouseover, sự kiện nổi bọt (phút 12:00 coi cho rõ)
  * 
@@ -1817,7 +1821,35 @@ var myArray = [
 
 /** Promise Example
  * 
- * Xem lại nguyên video để hiểu thêm.
+ * Xem lại nguyên video để hiểu thêm. */
+
+// ==============================================================================================================================
+
+/** Fetch
+ * 
+ * API - Application Programming Interface, có thể hiểu đơn giản là cổng giao tiếp giữa các phần mềm
+ * 
+ * Backend -> API (URL) -> Fetch -> JSON/XML -> JSON.parse -> JavaScript type -> Render ra giao diện với HTML
+ *  
+ * Cú pháp:
+ * fetch(API)
+ *  .then(function(response) {
+ *      return response.json()
+ * })
+ * 
+ * Chính cái response nó là một Promise, nên có thể dùng được các phương thức của Promise.
+ * Và vì thế nên khi return nó cũng return một Promise.
+ * 
+ * Giải thích code:
+ * Lấy KQ từ .then() trước, ta có 1 array of objects được truyền vào biến posts. Biến posts này sử dụng phương thức
+ * .map() để tạo ra một mảng mới, lưu vào biến htmls2. Trong phương thức map ta khai báo KQ mà ta muốn trả về.
+ * Dùng .join('') để biến mảng thành chuỗi, lưu nó vào html2.
+ * Dùng DOM get element methods để lấy ra thẻ <ul> cần xài, rồi truyền biến html2 vào phương thức .innerHTML để hiện trên trình duyệt. */ 
+
+// ==============================================================================================================================
+
+/** JSON Server
+ * 
 */
 
 
