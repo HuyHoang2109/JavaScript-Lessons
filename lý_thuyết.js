@@ -1734,6 +1734,8 @@ var myArray = [
  * 4. Mã hóa/Giải mã (Encode/Decode)
  * 5. Stringify/Parse: chuyển đổi dữ liệu sang JSON/trả về kiểu dữ liệu ban đầu
  * 
+ * Khi viết JSON trong file JS, phải có cặp dấu nháy đơn trước.
+ * 
  * Cú pháp:
  * var json = '1'           ->      dạng number
  * var json = 'null'        ->      dạng null
@@ -1840,7 +1842,7 @@ var myArray = [
  * Chính cái response nó là một Promise, nên có thể dùng được các phương thức của Promise.
  * Và vì thế nên khi return nó cũng return một Promise.
  * 
- * Giải thích code:
+ * Giải thích code bài này:
  * Lấy KQ từ .then() trước, ta có 1 array of objects được truyền vào biến posts. Biến posts này sử dụng phương thức
  * .map() để tạo ra một mảng mới, lưu vào biến htmls2. Trong phương thức map ta khai báo KQ mà ta muốn trả về.
  * Dùng .join('') để biến mảng thành chuỗi, lưu nó vào html2.
@@ -1850,8 +1852,32 @@ var myArray = [
 
 /** JSON Server
  * 
-*/
+ * Bài học này để học làm fake API server/Mock API.
+ * Một vài lưu ý: Khi sử dụng JSON Server qua Terminal/PowerShell, đừng tắt hẳn (icon thùng rác) mà chỉ close thôi. Vì tắt hẳn sẽ làm
+ * mất luôn json live server. 
+ * 
+ * Khởi động JSON Server:
+ * 1. Start New Terminal trên VSCode
+ * 2. Sử dụng: npx json-server db.json hoặc json-server --watch db.json để hiển thì file lên trình duyệt 
+ * 
+ * Vào trang này để tìm hiểu thêm cách khởi động (hoặc các cái khác): https://github.com/typicode/json-server */
 
+// ==============================================================================================================================
+
+/** Sử dụng Postman làm việc với REST API
+ * 
+ * 4 hành động thao tác với dữ liệu, CRUD:
+ * - Create -> POST
+ * - Read -> GET
+ * - Update -> PUT/PATCH
+ * - Delete -> DELETE */
+
+
+/**{
+      "id": 2,
+      "name": "Hãy tôn trọng quá trình, dù không biết trước kết quả",
+      "description": "Không có người nào biết trước kết quả mà mình sẽ đạt được, nhưng thay vì ngồi âu sầu thì hãy phát triển bản thân trước. Những điều tốt đẹp sẽ tự đến nếu bạn tin tưởng vào chính mình, quá trình sẽ giúp bạn nhận ra điều này."
+    } */
 
 
     
