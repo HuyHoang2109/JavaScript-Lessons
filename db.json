@@ -4,6 +4,16 @@
       "id": "1",
       "name": "Học tập để trở nên tốt hơn",
       "description": "Mỗi ngày hãy học một tí, từng tí một rồi sẽ thành nhiều. Đừng nản chí giữa chừng."
+    },
+    {
+      "id": "2",
+      "name": "Hãy tôn trọng quá trình, dù không biết trước kết quả",
+      "description": "Không có người nào biết trước kết quả mà mình sẽ đạt được, nhưng thay vì ngồi âu sầu thì hãy phát triển bản thân trước. Những điều tốt đẹp sẽ tự đến nếu bạn tin tưởng vào chính mình, quá trình sẽ giúp bạn nhận ra điều này."
+    },
+    {
+      "id": "3",
+      "name": "Mệt thì nghỉ, đừng cố quá sức.",
+      "description": "Khi bản thân cảm thấy mệt mỏi, nghĩa là nó cần giải lao. Nhưng cũng đừng nhầm với sự buông thả mà nuông chiều bản thân quá mức."
     }
   ]
 }

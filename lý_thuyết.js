@@ -825,7 +825,7 @@ var myArray = [
  * 2. for/in - Lặp qua key của đối tượng
  * 3. for/of - Lặp qua value của đối tượng
  * 4. while - Lặp khi điều kiện đúng
- * 5. do/while - Lặp ít nhất 1 lần, sau đó lặp khi điều kiện đúng 3
+ * 5. do/while - Lặp ít nhất 1 lần, sau đó lặp khi điều kiện đúng
  * 
  * 1. Vòng lặp For
  * Cho bài tập sau:
@@ -1091,7 +1091,7 @@ var myArray = [
  *          coin: 500
  *      }]
  * 
- * Phương thức forEach() dùng để duyệt qua từng phần tử của mảng. Bên trong forEach là một function, hay còn gọi là callback.
+ * 1. Phương thức forEach() dùng để duyệt qua từng phần tử của mảng. Bên trong forEach là một function, hay còn gọi là callback.
  * The forEach() method in JavaScript doesn't return a value because it's designed to execute a provided function once 
  * for each element in an array without producing a new array or result. It focuses solely on performing side effects, 
  * like modifying elements, logging to the console, or interacting with external resources.
@@ -1100,7 +1100,8 @@ var myArray = [
  *      console.log(index, course)
  * } //course ở đây đại diện cho từng phần tử trong mảng, index là vị trí của phần tử đó (thường không cần, thêm vào để ví dụ thôi)
  * 
- * Phương thức every() dùng để kiểm tra tất cả các phần tử trong mảng thỏa mãn một điều kiện nào đó. 
+ * 
+ * 2. Phương thức every() dùng để kiểm tra tất cả các phần tử trong mảng thỏa mãn một điều kiện nào đó. 
  * Giá trị trả về của every() là boolean. Hàm này sẽ xét điều kiện cho từng phần tử, nếu điều kiện sai ngay từ phần tử đầu thì sẽ là false luôn.
  * var isFree = courses.every(function (course, index) {
  *      console log(index) //in ra để thấy hàm đang xét tới đâu
@@ -1109,7 +1110,8 @@ var myArray = [
  * console.log(isFree)
  * //Trả về true nếu tất cả các khoá học đều miễn phí, false nếu ngược lại.
  * 
- * Phương thức some() cũng duyệt từng phần tử như every(), nhưng some() chỉ cần 1 phần tử đúng điều kiện thì sẽ trả về true và dừng vòng lặp.
+ * 
+ * 3. Phương thức some() cũng duyệt từng phần tử như every(), nhưng some() chỉ cần 1 phần tử đúng điều kiện thì sẽ trả về true và dừng vòng lặp.
  * Kết quả trả về là true/false.
  * var isFree = courses.some(function (course, index) {
  *.     console log(index) //in ra để thấy hàm đang xét tới đâu
@@ -1117,14 +1119,16 @@ var myArray = [
  * })
  * console.log(isFree)
  * 
- * Phương thức find() sẽ tìm và trả về phần tử đầu thoả mãn điều kiện. Nếu không có phần tử nào thoả mãn, sẽ trả về undefined. 
+ * 
+ * 4. Phương thức find() sẽ tìm và trả về phần tử đầu thoả mãn điều kiện. Nếu không có phần tử nào thoả mãn, sẽ trả về undefined. 
  * Kết quả trả về trong mảng mới.
  * var course = courses.find(function (course) {
  *      return course.name === 'Ruby'
  * })
  * console.log(course)
  * 
- * Phương thức filter() cũng tìm kiếm giống hàm find(), nhưng nó trả về tất cả những phần tử thoả mãn điều kiện.
+ * 
+ * 5. Phương thức filter() cũng tìm kiếm giống hàm find(), nhưng nó trả về tất cả những phần tử thoả mãn điều kiện.
  * Kết quả trả về trong mảng mới.
  * var listCourses = courses.filter(function (course) {
  *      return course.name === 'Ruby'
@@ -1345,6 +1349,7 @@ var myArray = [
 // ==============================================================================================================================
 
 /** Get element method 
+ * 
  * 1. Có thể get element bằng cách gọi:
  * ID, class, tag, CSS selector, HTML collection
  * 
@@ -1823,7 +1828,11 @@ var myArray = [
 
 /** Promise Example
  * 
- * Xem lại nguyên video để hiểu thêm. */
+ * Dựa vào ảnh, hãy tự tạo dữ liệu và trích được comment cũng như người comment để xuất ra được như hình.
+ * 
+ * Gợi ý:
+ * 1. Lấy comments
+ * 2. Từ comments lấy ra user_id, từ user_id lấy ra user tương ứng. */
 
 // ==============================================================================================================================
 

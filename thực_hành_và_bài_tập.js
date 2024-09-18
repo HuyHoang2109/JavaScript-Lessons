@@ -1312,7 +1312,17 @@ console.log(document.anchors)
 
     var courseAPI = 'http://localhost:3000/courses'
 
-    fetch(courseAPI)
+
+    // var options = {
+    //     method: 'POST',
+    //     body: JSON.stringify(data),
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }
+    // }
+    // Đống này thử sửa để nhập được kiểu form-urlencoded trên Postman, nhưng không được
+
+    fetch(courseAPI, options)
         .then(function(response) {
             return response.json()
         })
