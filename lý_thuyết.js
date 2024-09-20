@@ -1879,14 +1879,56 @@ var myArray = [
  * - Create -> POST
  * - Read -> GET
  * - Update -> PUT/PATCH
- * - Delete -> DELETE */
+ * - Delete -> DELETE 
+ * 
+ * Sự khác nhau giữa PUT và PATCH:
 
+    Khi sử dụng phương thức PUT, phải gửi toàn bộ dữ liệu mới lên máy chủ, kể cả những dữ liệu không muốn thay đổi.
+    Khi sử dụng phương thức PATCH, chỉ cần gửi trường dữ liệu muốn thay đổi, dữ liệu cũ không thay đổi sẽ được giữ nguyên
+    Tóm lại PUT thường dùng để thay thế toàn bộ dữ liệu còn PATCH chỉ để thay thế 1 trường dữ liệu cụ thể nào đó */
 
-/**{
-      "id": 2,
-      "name": "Hãy tôn trọng quá trình, dù không biết trước kết quả",
-      "description": "Không có người nào biết trước kết quả mà mình sẽ đạt được, nhưng thay vì ngồi âu sầu thì hãy phát triển bản thân trước. Những điều tốt đẹp sẽ tự đến nếu bạn tin tưởng vào chính mình, quá trình sẽ giúp bạn nhận ra điều này."
-    } */
+// ==============================================================================================================================
+
+/** ECMAScript 6 - ES6 (ra đời năm 2015)
+ * 
+ * 1. Let, const
+ * a. Khác nhau giữa var vs. let/const: Scope, Hosting
+ *  - var có thể truy cập ngoài code block / let/const chỉ truy cập được các biến trong code block
+ *  - var hỗ trợ hosting / let/const thì không
+ * 
+ * b. Khác nhau giữa const vs var/let: Assignment
+ *  - var/let có thể gán lại trước khi xuất ra / const thì không
+ *  VD: var a = 1; a = 100; console.log(a) -> 100, không lỗi (khi gán lại sẽ lấy giá trị nằm sau). Tương tự với let.
+ *      const a = 1; a = 100; console.log(a) -> lỗi -> không thể dùng toán tử gán khi sử dụng const.
+ *  - Nhưng có thế gán lại thuộc tính trong biến const.
+ *  VD: const a = { name: 'object' }; a.name = 'array'; console.log(a) -> array
+ * 
+ * => Khi định nghĩa biến và không gán lại -> dùng const.
+ *    Khi cần gán lại giá trị cho biến -> dùng let.
+ * 
+ * 
+ * 2. Template Literals
+ * Sử dụng với dấu backslash: console.log(`ABC: \${}`)
+ * 
+ * 3. Multi-line String
+ * Có thể viết xuống dòng mà không cần sử dụng \n.
+ * VD kiểu viết thường:
+ * var lines = 'Line 1\nLine 2\nLine 3'
+ * VD kiểu ES6: (mình để xuống dòng, nó sẽ tự hiểu là xuống dòng.)
+ * var lines = `Line 1
+ * Line 2
+ * Line 3`
+ * 
+ * 4. Arrow function
+ * 5. Classes
+ * 6. Default parameter values
+ * 7. Destructuring
+ * 8. Rest parameters
+ * 9. Spread
+ * 10. Enhanced object literals
+ * 11. Tagged template literal
+ * 12. Modules
+*/
 
 
     

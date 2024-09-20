@@ -1285,7 +1285,7 @@ console.log(document.anchors)
 // Fetch
     var postAPI = 'https://jsonplaceholder.typicode.com/posts'
     fetch(postAPI)
-        .then(function (response) {
+        .then(function(response) {
             return response.json()
             //JSON.parse: JSON -> JavaScript type (in this case, the result is an array of objects (each representing a post))
         })
@@ -1342,7 +1342,6 @@ console.log(document.anchors)
         })
 
 // ==============================================================================================================================
-
 
     
         
