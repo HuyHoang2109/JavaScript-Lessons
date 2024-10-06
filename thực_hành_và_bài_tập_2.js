@@ -36,3 +36,24 @@ var object2 = { age: 23}
 var object3 = { ...object1, ...object2}
 console.log(object3)
 
+// ==============================================================================================================================
+
+// Tagged template literal
+var myName = ['người khác']
+var yourName = ['chính mình']
+
+function abc (...rest) {
+    console.log(rest)
+}
+
+abc`Học cách yêu ${myName} từ cách yêu ${yourName}`
+
+function abcd ([first,...strings], ...values) {
+    return values.reduce((accumulator, currentValue) => 
+        [...accumulator, `<span>${currentValue}</span>`, strings.shift()], 
+        [first])
+    .join('')
+}
+
+const html = abcd`Học cách yêu ${myName} từ cách yêu ${yourName}`
+console.log(html)

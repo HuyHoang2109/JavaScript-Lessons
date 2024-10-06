@@ -2114,8 +2114,8 @@ var myArray = [
  *      console.log(rest)}
  * 
  * 10. Spread
- * a. Sử dụng để nối mảng
- * b. Sử dụng để hợp nhất 2 object
+ * a. Sử dụng để nối mảng -> xem bên file thực hành
+ * b. Sử dụng để hợp nhất 2 object -> xem bên file thực hành
  * 
  * c. Phân biệt giữa Spread và Rest
  * * Giống nhau: Đều sử dụng cú pháp ...
@@ -2137,6 +2137,9 @@ var myArray = [
  * 
  * 
  * 11. Tagged template literal
+ * Là một cú pháp viết ngắn gọn hơn, nhưng phức tạp về mặt tư duy (khi mới học thôi).
+ * Mở Inspect Element lên coi trên web để thấy nó log ra dạng mảng.
+ * CÓ một VD ở bài này mà không hiểu gì hết -> xem lại hoặc vào GPT hỏi.
  * 
  * 12. Modules
 */
