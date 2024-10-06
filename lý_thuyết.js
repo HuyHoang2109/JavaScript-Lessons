@@ -1910,23 +1910,234 @@ var myArray = [
  * 2. Template Literals
  * Sử dụng với dấu backslash: console.log(`ABC: \${}`)
  * 
+ * 
  * 3. Multi-line String
  * Có thể viết xuống dòng mà không cần sử dụng \n.
+ * 
  * VD kiểu viết thường:
  * var lines = 'Line 1\nLine 2\nLine 3'
+ * 
  * VD kiểu ES6: (mình để xuống dòng, nó sẽ tự hiểu là xuống dòng.)
  * var lines = `Line 1
  * Line 2
  * Line 3`
  * 
+ * 
  * 4. Arrow function
+ * Bỏ từ khóa function và thay vào đó là dấu '=>' đằng sau. 
+ * Khi tính toán gì đó và return luôn, thì có thể dùng '=>', nó sẽ tự hiểu đó là return.
+ * Còn nếu => {}, thì nó sẽ không hiểu đó là return, mà hiểu trả về một code block. Muốn nó hiểu đó là return, thì ta để code block vào trong cặp ().
+ * Khi chỉ có 1 tham số trong hàm đó, thì ta không cần để tham số đó vào (), mà viết không luôn cũng được.
+ * Arrow Function không có context (sễ học ở khóa nâng cao) và không sử dụng để làm Function Constructor được.
+ * 
+ * VD khai báo kiểu Expression:
+ * const logger = function(log) {
+ *      console.log(log) }
+ * logger('Message!')
+ * 
+ * VD khai báo kiểu Arrow Function: 
+ * const logger = (log) => {
+ *      console.log(log) }
+ * 
+ * VD với hàm sum cơ bản:
+ * const sum = (a, b) => {
+ *      return a + b }
+ * 
+ * VD với hàm sum cơ bản, nhưng ngắn gọn hơn:
+ * const sum = (a, b) => a + b
+ * 
+ * VD trả về 1 object gồm 2 số a & b:
+ * const anObject = (a, b) => ( {a: a, b: b} )
+ * 
+ * VD trả về console.log luôn:
+ * const logger = log => console.log(log)
+ * logger('Message!')
+ * 
+ * 
  * 5. Classes
+ * Dùng để gom lại những Function Constructor thành một khối cho dễ nhìn.
+ * 
+ * Cú pháp:
+ * class tên-class {
+ *      constructor(tên-tham-số-1, tên-tham-số-2) {
+ *          code-block } }
+ * 
+ * hoặc
+ * 
+ *      tên-phương-thức(tham-số-nếu-có) { code-block }
+ * 
+ * VD bên file thực hành.
+ * 
+ * 
  * 6. Default parameter values
- * 7. Destructuring
- * 8. Rest parameters
- * 9. Spread
- * 10. Enhanced object literals
+ * Tạo giá trị tham số mặc định.
+ * Bài toán: Ta có hàm logger. Khi truyền vào cái gì thì log ra cái đó, để trống thì sẽ in ra giá trị mặc định.
+ * 
+ * VD khi không sử dụng ES6 (phải sử dụng if):
+ * function logger(log) {
+ *      if(typeof log === 'undefined') {
+ *          console.log('Default value')
+ *      }
+ *      console.log(log)
+ * }
+ * 
+ * VD khi sử dụng ES6:
+ * function logger(log = 'Default value') {
+ *      console.log(log) 
+ * }
+ * 
+ * 
+ * 7. Enhanced object literals
+ * 
+ * a. Định nghĩa key-value cho object
+ * VD tạo object theo kiểu bình thường:
+ * var name = 'JavaScript'; var price = 1000;
+ * var course = {
+ *      name: name,
+ *      price: price
+ * }// Ở đây tên key trùng tên value
+ * 
+ * VD tạo object theo kiểu ngắn gọn:
+ * var course = { 
+ *      name,
+ *      price
+ * }
+ * 
+ * b. Định nghĩa method cho object
+ * VD tạo method theo kiểu bình thường:
+ * var course = {
+ *      getName: function() {
+ *          return name
+ *      }
+ * }
+ * 
+ * VD tạo method kiểu ngắn gọn:
+ * var course = {
+ *      getName() {
+ *          return name
+ *      }
+ * }//Bỏ cụm function luôn
+ * 
+ * c. Định nghĩa key cho object dưới dạng biến
+ * var fieldName = 'name'
+ * var fieldPrice = 'price'
+ * 
+ * const course = {
+ *      [fieldName]: 'PHP',
+ *      [fieldPrice]: '1000'
+ * }
+ * 
+ * Trong trường hợp này, sau này có muốn đổi giá trị của fieldName hay fieldPrice thì chỉ cần đổi ở phần khai báo.
+ * 
+ * 
+ * 8. Destructuring
+ * 
+ * var array = ['Huy', 'Hoang', 'Tuan']
+ * 
+ * Bài toán: từ array trên, hãy lấy ra các phần tử tương ứng.
+ * Cách làm thông thường:
+ * var a = array[0]
+ * var b = array[1]
+ * var c = array[2]
+ * 
+ * Cách làm sử dụng destructuring:
+ * var [a, b, c] = array
+ * 
+ * VD chỉ muốn lấy phần tử 0 và 2:
+ * var [a, , c] = array     //Bỏ trống chứ không xóa đi
+ * 
+ * 
+ * 9. Rest parameters
+ * Vẫn lấy array ở VD trên. Sau khi lấy được n phần tử, bây giờ muốn lấy hết các phần tử còn lại, thì ta sử dụng rest paremeters.
+ * rest là tên biến thôi, muốn đặt tên như nào cũng được, không nhất thiết phải là rest.
+ * 
+ * var [a, ...rest] = array
+ * 
+ * console.log(a) -> array[0]
+ * console.log(rest) -> tất cả các phần tử còn lại
+ * 
+ * Tương tự với object. Khác ở chỗ, object có thuộc tính key-value -> muốn lấy ra cái nào, phải gọi chính xác key đó.
+ * 
+ * Bonus thủ thuật hay trong bài:
+ * Bài toán: hãy xóa 1 key của object mà không sử dụng từ khóa delete.
+ * 
+ * var course = {
+ *      name: 'PHP',
+ *      price: 1000,
+ *      image: 'abcxyz'
+ * }
+ * 
+ * var { name, ...newObject } = course
+ * console.log(newObject) -> 1 mảng mới chỉ chứa value của các key còn lại.
+ * 
+ * Bài toán 1: Có 1 object con trong 1 object. Lấy ra value của object con đó.
+ * var course = {
+ *      name: 'PHP',
+ *      price: 1000,
+ *      children: { name: 'ReactJS'}
+ * }
+ * 
+ * var { name, price, children: { name } } = course
+ * //Với cách làm này thì sẽ bị trùng tên -> name sau sẽ ghi đè name trước
+ * 
+ * var { name: parentName, children: { name } } = course
+ * //Với cách này sẽ đổi tên biến name đầu thành parentName, và 2 cái sẽ được lưu riêng biệt -> giải quyết được vấn đề.
+ * 
+ * Bài toán 2: Lấy ra value của 1 key trong 1 object, nhưng value đó chưa được khai báo.
+ * var { name, description = 'abc' } = course
+ * //Value của description là default value (nếu chưa khai báo thì sẽ in ra value này.)
+ * 
+ * Bài toán 3: Tạo 1 hàm xuất ra những value "còn lại".
+ * function logger (a, ...params) {
+ *      console.log(params) }
+ * 
+ * logger(1,2,3,4) -> [2, 3, 4]
+ * Giải thích: vì trên hàm có tham số a, nên params được hiểu là những giá trị còn lại (trừ a).
+ * Tương tự khi có b, c vào thì sẽ mất dần những giá trị tiếp theo.
+ * 
+ * Bài toán 4: Tạo 1 hàm lấy value của 1 object (không sử dụng cách thông thường)
+ * VD ta có 1 object như sau:
+ * logger({
+ *      name: 'Huy Hoang',
+ *      age: 23,
+ *      description: 'content'})
+ * 
+ * Sử dụng cách thông thường để lấy value: (Nhược điểm: Khi có nhiều đối tượng, phải log ra nhiều lần)
+ * function logger (obj) {
+ *      console.log(obj.name)
+ *      console.log(obj.age)}
+ * 
+ * Khi đã biết đó là 1 object, ta có thể sử dụng Destructuring như sau:
+ * function logger ({ name, age, ...rest }) {
+ *      console.log(name)
+ *      console.log(age)
+ *      console.log(rest)}
+ * 
+ * 10. Spread
+ * a. Sử dụng để nối mảng
+ * b. Sử dụng để hợp nhất 2 object
+ * 
+ * c. Phân biệt giữa Spread và Rest
+ * * Giống nhau: Đều sử dụng cú pháp ...
+ * 
+ * * Khác nhau:
+ *      - Rest: được sử dụng chung với destructuring, hoặc khi định nghĩa tham số
+ *      - Spread: được sử dụng độc lập, hoặc khi được truyền vào như 1 đối số
+ * 
+ * Chẳng hạn VD này:
+ * var array = ['Huy', 'Hoang', 'Tuan']
+ * 
+ * function logger (...rest) {
+ *      for (var i = 0; i < rest.length; i++)
+ *          console.log(rest[i])}
+ * 
+ * logger(...array)
+ * 
+ * -> Khi khai báo hàm thì đó là Rest, khi gọi hàm thì đó là Spread (không phải lúc nào cũng vậy, trong trường hợp này thôi).
+ * 
+ * 
  * 11. Tagged template literal
+ * 
  * 12. Modules
 */
 
