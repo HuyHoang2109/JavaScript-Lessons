@@ -215,6 +215,10 @@ function run(object) {
 
 console.log(run({ name: 'Nguyen Van A', age: 16 }));
 
+// ==============================================================================================================================
+
+// Break & Continue trong vòng lặp.
+
 for(var i = 0; i < 10; i++) {
     if(i%2 !== 0) {
         continue; }

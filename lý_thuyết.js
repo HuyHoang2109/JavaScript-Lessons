@@ -830,8 +830,7 @@ var myArray = [
  * 1. Vòng lặp For
  * Cho bài tập sau:
  * Hãy tạo hàm getRandNumbers có 3 tham số là min, max, length.
- * Hàm này sẽ trả về một mảng gồm length phần tử, các giá trị trong mảng là số ngẫu nhiên,
- * giá trị trong khoảng từ min tới max.
+ * Hàm này sẽ trả về một mảng gồm length phần tử, các giá trị trong mảng là số ngẫu nhiên, giá trị trong khoảng từ min tới max.
  * Gợi ý: Math.random() * (max - min) + min là cách tạo ra 1 số ngẫu nhiên trong khoảng min - max.
  * Bài giải phía dưới.
  * 
@@ -875,7 +874,7 @@ var myArray = [
  *      'Ruby']
  * 
  * for (var key in languages) {
- *      console.log(languages[key]) } //Output là từng giá trị trong mảng trên.
+ *      console.log(languages[key]) } //Output là từng vị trí các phần tứ trong mảng trên.
  * //Giải thích: vì key trong vòng for trên lưu vị trí index (0, 1, 2, ...).
  * 
  * Lưu ý: key của 1 array là dạng number (key của 1 string cũng là 1 number)
@@ -950,7 +949,7 @@ var myArray = [
  * 
  * do {
  *      i++;
- *      console.log('Nạp thẻ lần ' + i;
+ *      console.log('Nạp thẻ lần ' + i);
  *      if(true) {
  *          isSuccess = true; }
  * } while (!isSuccess && i <=3)
@@ -960,8 +959,8 @@ var myArray = [
  * 2. So sánh while. Lúc này isSuccess = true -> !isSuccess = !true -> false -> cả vế = false -> sai điều kiện -> dừng code
  * 3. Nếu đổi thành if(false) thì tự giải thích nhé. 
  * 
- * Break và Continue trong vòng lặp
- * Break và Continue có thể sử dụng trong tất cả các vòng lặp đã học
+ * Break & Continue trong vòng lặp
+ * Break & Continue có thể sử dụng trong tất cả các vòng lặp đã học
  * 
  * Bài toán 1: In ra chỉ từ số 1 - 5 với vòng for cho trước, sử dụng break hoặc continue.
  * for(var i = 0; i < 10; i++) {
@@ -1030,7 +1029,7 @@ var myArray = [
  * loop(0, array.length - 1, function(index) {
  *      console.log('index: ', index) }
  * 
- * Ví dụ tính giai thừa:
+ * Ví dụ tính giai thừa theo cách thông thường:
  * function giaiThua(number) {
  *      var output = 1
  *      for(var i = number; i > 0; i--) {
@@ -1903,8 +1902,9 @@ var myArray = [
  *  - Nhưng có thế gán lại thuộc tính trong biến const.
  *  VD: const a = { name: 'object' }; a.name = 'array'; console.log(a) -> array
  * 
- * => Khi định nghĩa biến và không gán lại -> dùng const.
- *    Khi cần gán lại giá trị cho biến -> dùng let.
+ * c. Khi nào dùng cái nào?
+ * - Khi định nghĩa biến và không gán lại -> dùng const.
+ * - Khi cần gán lại giá trị cho biến -> dùng let.
  * 
  * 
  * 2. Template Literals
@@ -2141,7 +2141,9 @@ var myArray = [
  * Mở Inspect Element lên coi trên web để thấy nó log ra dạng mảng.
  * CÓ một VD ở bài này mà không hiểu gì hết -> xem lại hoặc vào GPT hỏi.
  * 
+ * 
  * 12. Modules
+ * 5:00
 */
 
 
