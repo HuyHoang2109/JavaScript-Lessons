@@ -403,63 +403,64 @@ var myArray = [
  * var myString = 'Hoc JS tai F8!'
  * 
  * 1. Length
- * Cú pháp:     console.log(myString.length)
+ * Cú pháp:     myString.length
  * 
  * 2. Find index
  * Trả về vị trí đầu tiên khi gặp chuỗi cần tìm.
- * Cú pháp:     console.log(myString.indexOf('chuỗi cần tìm'))
+ * Cú pháp:     myString.indexOf('chuỗi-cần-tìm')
  * Nếu có sẽ trả về vị trí đứng, không có sẽ trả về -1
  * 
  * var myString = 'Hoc JS tai JS JS F8!'
  * 
- * Cú pháp:     console.log(myString.indexOf('chuỗi cần tìm', 6))
+ * Cú pháp:     myString.indexOf('chuỗi-cần-tìm', 6)
  * Số 6 có nghĩa là bắt đầu tìm từ index số 6.
  * 
- * Cú pháp:     console.log(myString.lastIndexOf('chuỗi cần tìm'))
+ * Cú pháp:     myString.lastIndexOf('chuỗi-cần-tìm')
  * Tìm kiếm từ cuối chuỗi lên đầu
  * 
- * Cú pháp:     console.log(myString.search('chuỗi cần tìm'))
+ * Cú pháp:     myString.search('chuỗi-cần-tìm')
  * a/ Giống với find index, nhưng không tìm được từ vị trí mong muốn mà nó tìm từ đầu
  * b/ Hỗ trợ tìm cả biểu thức chính quy (chưa được học)
  * 
  * 3. Cut string
- * Cú pháp:     console.log(myString.slice(vị trí bắt đầu, vị trí kết thúc))
+ * Cú pháp:     myString.slice(vị-trí-bắt-đầu, vị-trí-kết-thúc)
  * Muốn tìm từ phải sang trái, thì sử dụng số âm, từ 0, -1, -2,...
  * VD muốn cắt chữ F8 trong myString, ta sử dụng: console.log(myString.slice(-3, -1))
  * 
  * 4. Replace
- * Cú pháp:     console.log(myString.replace('chuỗi mong muốn thay thế', 'chuỗi sẽ thay thế'))
- * VD muốn thay thế JS bằng JavaScript trong chuỗi trên thì dùng: console.log(myString.replace('JS', 'JavaScript'))
+ * Cú pháp:     myString.replace('chuỗi-muốn-thay-thế', 'chuỗi-sẽ-thay-thế')
+ * VD muốn thay thế JS bằng JavaScript trong chuỗi trên thì dùng: myString.replace('JS', 'JavaScript'))
  * Lưu ý: nó chỉ thay thế thằng đầu tiên nó gặp, chứ không thay thế tất cả
  * 
- * Cú pháp:     console.log(myString.replace(/JS/g, 'JavaScript')
+ * Cú pháp:     myString.replace(/JS/g, 'JavaScript')
  * Cái này có chứa biểu thức chính quy, sẽ chọn tất cả những chuỗi 'JS' và thay thế bằng JavaScript
  * 
  * 5. Convert to upper case
- * Cú pháp:     console.log(myString.toUpperCase())
+ * Cú pháp:     myString.toUpperCase()
  * 
  * 6. Convert to lower  case
- * Cú pháp:     console.log(myString.toLowerCase())
+ * Cú pháp:     myString.toLowerCase()
  * 
  * 7. Trim
- * Cú pháp:     console.log(myString.trim())
+ * Cú pháp:     myString.trim()
  * Loại bỏ những khoảng trống thừa ở đầu và cuối chuỗi
  * 
  * 8. Split
  * Đưa chuỗi vào trong 1 mảng mới. Cần tìm điểm chung trong chuỗi cũ, giữa các chuỗi với nhau để cắt.
- * Cú pháp:     console.log(languages.split('điểm chung để cắt'))
+ * Cú pháp:     languages.split('điểm-chung-để-cắt')
  * Biến một chuỗi (string) thành một array (chưa học tới, ở mức giới thiệu)
+ * 
  * VD:
  * var languages = 'JavaScript, Ruby, PHP'
  * console.log(languages.split(', '))
  * Điểm chung của chuỗi kia dấu cách một khoảng trắng.
  * 
  * Muốn cắt từng chữ cái trong một chuỗi chỉ có 1 giá trị, ví dụ là JavaScript, thì điểm chung là một chuỗi rỗng
- * console.log(languages.split(''))
+ * languages.split('')
  * 
  * 9. Get a character by index
- * Cú pháp:     console.log(myString2.charAt(vị trí trong chuỗi))
- * Cách khác:   console.log(myString2[10])
+ * Cú pháp:     myString2.charAt(vị trí trong chuỗi)
+ * Cách khác:   myString2[10]
  * 
  * const myString2 = 'Huy Hoang'
  * Kết quả trả về là ký tự ở vị trí đó
@@ -592,45 +593,46 @@ var myArray = [
  *      'Ruby' ]
  * 
  * 1. To string
- * Cú pháp:     console.log(languages.toString())
+ * Cú pháp:     languages.toString()
  * Chuyển từ dạng mảng sang dạng chuỗi
  * 
  * 2. Join
- * Cú pháp:     console.log(languages.join('chuỗi muốn nối'))
+ * Cú pháp:     languages.join('chuỗi muốn nối')
  * Để trống thì sẽ các giá trị sẽ bị nối liền. Để ' ' thì sẽ cách ra.
  * Khi join('') với mảng thì mảng đó sẽ thành chuỗi.
  * 
  * 3. Pop
- * Cú pháp:     console.log(languages.pop())
+ * Cú pháp:     languages.pop()
  * Xóa phần tử cuối mảng và trả về phần tử đã xóa. Khi đã hết phần tử trong mảng, thì 
  * sẽ trả về undefined.
  * 
  * 4. Push
- * Cú pháp:     console.log(languages.push('giá trị muốn thêm'))
+ * Cú pháp:     languages.push('giá trị muốn thêm')
  * Thêm phần tử vào cuối mảng. Không giới hạn số lượng thêm.
  * 
  * 5. Shift
- * Cú pháp:     console.log(languages.shift())
+ * Cú pháp:     languages.shift()
  * Xóa phần tử đầu mảng và trả về phần tử đã xóa. Khi đã hết phần tử trong mảng, thì 
  * sẽ trả về undefined.
  * 
  * 6. Unshift
- * Cú pháp:     console.log(languages.unshift())
+ * Cú pháp:     languages.unshift()
  * Thêm phần tử vào đầu mảng. Không giới hạn số lượng thêm.
  * 
  * 7. Splicing
- * Cú pháp:     languages.splice(số-vị-trí-index, số-phần-tử-muốn-xóa-tính-từ-số-vị-trí-index, 'phần tử muốn thêm sau số vị trí index')
+ * Cú pháp:     languages.splice(số-vị-trí-index, số-phần-tử-muốn-xóa-tính-từ-số-vị-trí-index, 'phần-tử-muốn-thêm-sau-số-vị-trí-index')
  * Hàm này có thể dùng để xóa và thêm phần tử trong array. Trường hợp thêm thì không giới hạn số phần tử có thể thêm.
  * Ví dụ muốn xóa ở vị trí số 0 (JavaScript) và thêm vào đó là (Java) thì nhập:
  * languages.splice(0, 1, 'Java')
  * 
  * 8. Concat
- * Cú pháp:     console.log(tên-array-1.concat(tên-array-2))
+ * Cú pháp:     tên-array-1.concat(tên-array-2)
  * Dùng để nối 2 mảng với nhau.
  * 
  * 9. Slicing
- * Cú pháp:     console.log(languages.slice(số-vị-trí-index-bắt-đầu, số-vị-trí-index-kết-thúc))
+ * Cú pháp:     languages.slice(số-vị-trí-index-bắt-đầu, số-vị-trí-index-kết-thúc)
  * Kết quả trả về là ký tự nằm trong khoảng bắt đầu và kết thúc.
+ * 
  * Hàm này giống "trích" ra chứ không phải cắt phần tử khỏi mảng.
  * Hoặc dùng để copy mảng (trick): console.log(slice(0));
  * Cũng có thể truyền vào giá trị âm, như đếm ngược vậy.
